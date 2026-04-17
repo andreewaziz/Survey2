@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Riyadh Season Survey | استبيان موسم الرياض</title>
-  <meta name="description" content="Academic survey on the impact of Riyadh Season event quality on visitor satisfaction and destination loyalty.">
+  <title>Sports Events Tourism Survey | استبيان السياحة الرياضية</title>
+  <meta name="description" content="Academic survey on the role of sports events in tourism development in Saudi Arabia.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
@@ -268,7 +268,6 @@
     <span id="response-count-badge" style="background:#fff;color:#0a1f5c;border-radius:9999px;padding:0.125rem 0.5rem;font-size:0.75rem;font-weight:700;margin-left:0.25rem;">0</span>
   </button>
 
-  <!-- DASHBOARD MODAL -->
   <div id="dashboard" role="dialog" aria-modal="true">
     <div id="dashboard-panel">
       <button id="close-dashboard" onclick="closeDashboard()">✕</button>
@@ -292,21 +291,18 @@
     </div>
   </div>
 
-  <!-- MAIN CONTAINER -->
   <div class="max-w-3xl mx-auto px-4 py-8">
 
-    <!-- KSU Logo Top -->
     <div style="text-align:center;margin-bottom:2rem;">
       <img src="KSU.png" alt="KSU Logo" style="max-width:300px;height:auto;opacity:0.9;">
     </div>
 
-    <!-- Hero -->
     <div class="hero fade-in">
       <div class="section-badge" data-en="Academic Research Survey" data-ar="استبيان بحث أكاديمي">Academic Research Survey</div>
       <h1 class="text-2xl md-text-3xl font-bold mb-2 leading-snug"
-          data-en="The Impact of Riyadh Season Event Quality on Visitor Satisfaction and Destination Loyalty"
-          data-ar="أثر جودة فعاليات موسم الرياض على رضا الزوار والولاء للوجهة السياحية">
-        The Impact of Riyadh Season Event Quality on Visitor Satisfaction and Destination Loyalty
+          data-en="The Role of Sports Events in Tourism Development in Saudi Arabia"
+          data-ar="دور الفعاليات الرياضية في التنمية السياحية في المملكة العربية السعودية">
+        The Role of Sports Events in Tourism Development in Saudi Arabia
       </h1>
       <p class="text-sm opacity-75 mt-3"
          data-en="Academic Research Survey · 5-Point Likert Scale"
@@ -315,7 +311,6 @@
       </p>
     </div>
 
-    <!-- Sticky Progress -->
     <div class="sticky-progress fade-in">
       <div class="flex justify-between items-center mb-1 px-1">
         <span class="text-xs font-semibold text-gray-500" id="progress-label" data-en="Survey Progress" data-ar="تقدم الاستبيان">Survey Progress</span>
@@ -326,33 +321,30 @@
       </div>
     </div>
 
-    <!-- Intro -->
     <div class="section-card fade-in">
       <h2 class="text-lg font-bold mb-3" style="color:#0a1f5c;"
           data-en="Participant Information" data-ar="معلومات للمشارك">Participant Information</h2>
       <p class="text-sm text-gray-700 leading-relaxed"
-         data-en="Dear Participant,&lt;br/&gt;&lt;br/&gt;Thank you for participating in this study. The purpose of this questionnaire is to evaluate the impact of event quality at Riyadh Season on visitor satisfaction and destination loyalty. Your responses are anonymous and will be used solely for academic research purposes. Please answer all questions honestly based on your most recent experience at Riyadh Season.&lt;br/&gt;&lt;br/&gt;The survey takes approximately 10 minutes to complete."
-         data-ar="عزيزي المشارك،&lt;br/&gt;&lt;br/&gt;شكراً لمشاركتك في هذه الدراسة. يهدف هذا الاستبيان إلى تقييم أثر جودة الفعاليات في موسم الرياض على رضا الزوار وولائهم للوجهة السياحية. إجاباتك مجهولة الهوية وستُستخدم لأغراض بحثية أكاديمية فقط. يرجى الإجابة بصدق بناءً على أحدث تجربة لك في موسم الرياض.&lt;br/&gt;&lt;br/&gt;لا يستغرق ملء الاستبيان أكثر من 10 دقائق.">
-        Dear Participant,<br><br>Thank you for participating in this study. The purpose of this questionnaire is to evaluate the impact of event quality at Riyadh Season on visitor satisfaction and destination loyalty. Your responses are anonymous and will be used solely for academic research purposes. Please answer all questions honestly based on your most recent experience at Riyadh Season.<br><br>The survey takes approximately 10 minutes to complete.
+         data-en="Dear Participant,&lt;br/&gt;&lt;br/&gt;You are invited to participate in a study exploring the impact of sports events on tourism development in Saudi Arabia. Your responses will remain anonymous and will be used solely for academic research purposes. Completing this survey will take approximately 5–7 minutes.&lt;br/&gt;&lt;br/&gt;Thank you for your valuable contribution."
+         data-ar="عزيزي المشارك،&lt;br/&gt;&lt;br/&gt;ندعوك للمشاركة في دراسة تستكشف أثر الفعاليات الرياضية على التنمية السياحية في المملكة العربية السعودية. ستبقى إجاباتك مجهولة الهوية وستُستخدم لأغراض البحث الأكاديمي فقط. يستغرق إكمال هذا الاستبيان حوالي 5-7 دقائق.&lt;br/&gt;&lt;br/&gt;شكراً لمساهمتك القيمة.">
+        Dear Participant,<br><br>You are invited to participate in a study exploring the impact of sports events on tourism development in Saudi Arabia. Your responses will remain anonymous and will be used solely for academic research purposes. Completing this survey will take approximately 5–7 minutes.<br><br>Thank you for your valuable contribution.
       </p>
     </div>
 
     <form id="survey-form" novalidate>
 
-      <!-- SECTION A: SCREENING -->
       <div class="section-card fade-in">
-        <div class="section-badge" data-en="Section A" data-ar="القسم أ">Section A</div>
+        <div class="section-badge" data-en="Section 1" data-ar="القسم 1">Section 1</div>
         <h2 class="text-xl font-bold mb-1" style="color:#0a1f5c;"
             data-en="Screening Questions" data-ar="أسئلة الفرز">Screening Questions</h2>
         <p class="text-sm text-gray-500 mb-5"
-           data-en="Please select the appropriate option." data-ar="يرجى اختيار الخيار المناسب.">Please select the appropriate option.</p>
+           data-en="Please select the appropriate option to confirm your eligibility for this study." data-ar="يرجى اختيار الخيار المناسب لتأكيد أهليتك للمشاركة في هذه الدراسة.">Please select the appropriate option to confirm your eligibility for this study.</p>
 
-        <!-- Q1 -->
         <div class="mb-5" id="wrap-sc1">
           <p class="font-semibold text-gray-800 mb-2"
-             data-en="1. Have you attended any events or zones during the Riyadh Season (current or most recent season)?"
-             data-ar="1. هل حضرت أي فعاليات أو مناطق خلال موسم الرياض (الموسم الحالي أو الأخير)؟">
-            1. Have you attended any events or zones during the Riyadh Season (current or most recent season)?
+             data-en="1. Have you attended at least one major sports event in Saudi Arabia within the last 12 months (e.g., Formula 1, Dakar Rally, football matches, etc.)?"
+             data-ar="1. هل حضرت على الأقل فعالية رياضية كبرى واحدة في المملكة العربية السعودية خلال الـ 12 شهراً الماضية (مثل فورمولا 1، رالي داكار، مباريات كرة القدم، إلخ)؟">
+            1. Have you attended at least one major sports event in Saudi Arabia within the last 12 months (e.g., Formula 1, Dakar Rally, football matches, etc.)?
           </p>
           <label class="demo-option" onclick="selectScreen(this,'sc1','yes')">
             <input type="radio" name="sc1" value="yes">
@@ -360,22 +352,21 @@
           </label>
           <label class="demo-option" onclick="selectScreen(this,'sc1','no')">
             <input type="radio" name="sc1" value="no">
-            <span data-en="No (If no, please stop here)" data-ar="لا (إذا كانت الإجابة لا، يرجى التوقف هنا)">No (If no, please stop here)</span>
+            <span data-en="No (If no, please stop here)" data-ar="لا (شكراً لاهتمامك؛ أنت غير مؤهل لهذه الدراسة)">No (If no, please stop here)</span>
           </label>
           <div class="screening-stop" id="stop-sc1"
-               data-en="⚠️ Thank you for your time. This survey is only for those who have attended Riyadh Season."
-               data-ar="⚠️ شكراً لوقتك. هذا الاستبيان مخصص لمن حضر موسم الرياض فقط.">
-            ⚠️ Thank you for your time. This survey is only for those who have attended Riyadh Season.
+               data-en="⚠️ Thank you for your interest; you are not eligible for this study."
+               data-ar="⚠️ شكراً لاهتمامك؛ أنت غير مؤهل لهذه الدراسة.">
+            ⚠️ Thank you for your interest; you are not eligible for this study.
           </div>
           <p class="error-msg" id="err-sc1" data-en="Please select an option." data-ar="يرجى اختيار إجابة.">Please select an option.</p>
         </div>
 
-        <!-- Q2 -->
         <div class="mb-5" id="wrap-sc2">
           <p class="font-semibold text-gray-800 mb-2"
-             data-en="2. Was your primary purpose for visiting Riyadh Season leisure, entertainment, or tourism?"
-             data-ar="2. هل كان الغرض الرئيسي من زيارتك لموسم الرياض هو الترفيه أو السياحة؟">
-            2. Was your primary purpose for visiting Riyadh Season leisure, entertainment, or tourism?
+             data-en="2. Are you 18 years of age or older?"
+             data-ar="2. هل تبلغ من العمر 18 عاماً أو أكثر؟">
+            2. Are you 18 years of age or older?
           </p>
           <label class="demo-option" onclick="selectScreen(this,'sc2','yes')">
             <input type="radio" name="sc2" value="yes">
@@ -386,106 +377,147 @@
             <span data-en="No" data-ar="لا">No</span>
           </label>
           <div class="screening-stop" id="stop-sc2"
-               data-en="⚠️ Thank you for your time. This survey targets visitors whose primary purpose was leisure, entertainment, or tourism."
-               data-ar="⚠️ شكراً لوقتك. يستهدف هذا الاستبيان الزوار الذين كان غرضهم الأساسي الترفيه أو السياحة.">
-            ⚠️ Thank you for your time. This survey targets visitors whose primary purpose was leisure, entertainment, or tourism.
+               data-en="⚠️ Thank you for your interest; you are not eligible for this study."
+               data-ar="⚠️ شكراً لاهتمامك؛ أنت غير مؤهل لهذه الدراسة.">
+            ⚠️ Thank you for your interest; you are not eligible for this study.
           </div>
           <p class="error-msg" id="err-sc2" data-en="Please select an option." data-ar="يرجى اختيار إجابة.">Please select an option.</p>
         </div>
+
+        <div class="mb-5" id="wrap-sc3">
+          <p class="font-semibold text-gray-800 mb-2"
+             data-en="3. Which of the following types of events did you most recently attend?"
+             data-ar="3. أي من أنواع الفعاليات التالية حضرتها مؤخراً؟">
+            3. Which of the following types of events did you most recently attend?
+          </p>
+          <label class="demo-option" onclick="selectDemo(this,'sc3')">
+            <input type="radio" name="sc3" value="Motorsport">
+            <span data-en="Motorsport (e.g., F1, Dakar Rally, Extreme E)" data-ar="رياضة المحركات (مثل فورمولا 1، رالي داكار، إكستريم إي)">Motorsport (e.g., F1, Dakar Rally, Extreme E)</span>
+          </label>
+          <label class="demo-option" onclick="selectDemo(this,'sc3')">
+            <input type="radio" name="sc3" value="Football">
+            <span data-en="Football (e.g., Saudi Pro League, International friendlies)" data-ar="كرة القدم (مثل الدوري السعودي للمحترفين، مباريات ودية دولية)">Football (e.g., Saudi Pro League, International friendlies)</span>
+          </label>
+          <label class="demo-option" onclick="selectDemo(this,'sc3')">
+            <input type="radio" name="sc3" value="Combat Sports">
+            <span data-en="Combat Sports (e.g., Boxing, WWE, UFC)" data-ar="الرياضات القتالية (مثل الملاكمة، WWE، UFC)">Combat Sports (e.g., Boxing, WWE, UFC)</span>
+          </label>
+          <label class="demo-option" onclick="selectDemo(this,'sc3')">
+            <input type="radio" name="sc3" value="Golf or Tennis">
+            <span data-en="Golf or Tennis (e.g., LIV Golf, Diriyah Cup)" data-ar="الجولف أو التنس (مثل ليف جولف، كأس الدرعية)">Golf or Tennis (e.g., LIV Golf, Diriyah Cup)</span>
+          </label>
+          <label class="demo-option" onclick="selectDemo(this,'sc3')">
+            <input type="radio" name="sc3" value="Other">
+            <span data-en="Other" data-ar="أخرى">Other</span>
+          </label>
+          <p class="error-msg" id="err-sc3" data-en="Please select an option." data-ar="يرجى اختيار إجابة.">Please select an option.</p>
+        </div>
       </div>
 
-      <!-- SECTION B: EVENT QUALITY -->
       <div class="section-card fade-in">
-        <div class="section-badge" data-en="Section B" data-ar="القسم ب">Section B</div>
+        <div class="section-badge" data-en="Section 2" data-ar="القسم 2">Section 2</div>
         <h2 class="text-xl font-bold mb-1" style="color:#0a1f5c;"
-            data-en="Event Quality" data-ar="جودة الفعالية">Event Quality</h2>
+            data-en="Sports Event Quality & Experience" data-ar="جودة الفعالية الرياضية والتجربة">Sports Event Quality & Experience</h2>
         <p class="text-sm text-gray-500 mb-5"
-           data-en="Please indicate your level of agreement with the following statements (1 = Strongly Disagree, 5 = Strongly Agree)."
-           data-ar="يرجى تحديد مستوى موافقتك على العبارات التالية (1 = أختلف بشدة، 5 = أوافق بشدة).">
-          Please indicate your level of agreement with the following statements (1 = Strongly Disagree, 5 = Strongly Agree).
+           data-en="Please indicate your level of agreement with the following statements regarding the most recent sports event you attended in Saudi Arabia (1 = Strongly Disagree, 5 = Strongly Agree)."
+           data-ar="يرجى تحديد مستوى موافقتك على العبارات التالية بخصوص أحدث فعالية رياضية حضرتها في السعودية (1 = أختلف بشدة، 5 = أوافق بشدة).">
+          Please indicate your level of agreement with the following statements regarding the most recent sports event you attended in Saudi Arabia (1 = Strongly Disagree, 5 = Strongly Agree).
         </p>
-        <div id="eq-questions"></div>
+        <div id="sec2-questions"></div>
       </div>
 
-      <!-- SECTION C: VISITOR SATISFACTION -->
       <div class="section-card fade-in">
-        <div class="section-badge" data-en="Section C" data-ar="القسم ج">Section C</div>
+        <div class="section-badge" data-en="Section 3" data-ar="القسم 3">Section 3</div>
+        <h2 class="text-xl font-bold mb-1" style="color:#0a1f5c;"
+            data-en="Destination Image" data-ar="صورة الوجهة">Destination Image</h2>
+        <p class="text-sm text-gray-500 mb-5"
+           data-en="Please indicate your level of agreement regarding your perception of Saudi Arabia as a destination (1 = Strongly Disagree, 5 = Strongly Agree)."
+           data-ar="يرجى تحديد مستوى موافقتك حول تصورك للمملكة العربية السعودية كوجهة (1 = أختلف بشدة، 5 = أوافق بشدة).">
+          Please indicate your level of agreement regarding your perception of Saudi Arabia as a destination (1 = Strongly Disagree, 5 = Strongly Agree).
+        </p>
+        <div id="sec3-questions"></div>
+      </div>
+
+      <div class="section-card fade-in">
+        <div class="section-badge" data-en="Section 4" data-ar="القسم 4">Section 4</div>
         <h2 class="text-xl font-bold mb-1" style="color:#0a1f5c;"
             data-en="Visitor Satisfaction" data-ar="رضا الزوار">Visitor Satisfaction</h2>
         <p class="text-sm text-gray-500 mb-5"
-           data-en="Please indicate your level of agreement with the following statements (1 = Strongly Disagree, 5 = Strongly Agree)."
-           data-ar="يرجى تحديد مستوى موافقتك على العبارات التالية (1 = أختلف بشدة، 5 = أوافق بشدة).">
-          Please indicate your level of agreement with the following statements (1 = Strongly Disagree, 5 = Strongly Agree).
+           data-en="Please indicate your level of agreement regarding your overall experience (1 = Strongly Disagree, 5 = Strongly Agree)."
+           data-ar="يرجى تحديد مستوى موافقتك حول تجربتك بشكل عام (1 = أختلف بشدة، 5 = أوافق بشدة).">
+          Please indicate your level of agreement regarding your overall experience (1 = Strongly Disagree, 5 = Strongly Agree).
         </p>
-        <div id="vs-questions"></div>
+        <div id="sec4-questions"></div>
       </div>
 
-      <!-- SECTION D: DESTINATION LOYALTY -->
       <div class="section-card fade-in">
-        <div class="section-badge" data-en="Section D" data-ar="القسم د">Section D</div>
+        <div class="section-badge" data-en="Section 5" data-ar="القسم 5">Section 5</div>
         <h2 class="text-xl font-bold mb-1" style="color:#0a1f5c;"
-            data-en="Destination Loyalty" data-ar="الولاء للوجهة السياحية">Destination Loyalty</h2>
+            data-en="Behavioral Intentions" data-ar="النوايا السلوكية">Behavioral Intentions</h2>
         <p class="text-sm text-gray-500 mb-5"
-           data-en="Please indicate your level of agreement with the following statements (1 = Strongly Disagree, 5 = Strongly Agree)."
-           data-ar="يرجى تحديد مستوى موافقتك على العبارات التالية (1 = أختلف بشدة، 5 = أوافق بشدة).">
-          Please indicate your level of agreement with the following statements (1 = Strongly Disagree, 5 = Strongly Agree).
+           data-en="Please indicate your level of agreement regarding your future plans (1 = Strongly Disagree, 5 = Strongly Agree)."
+           data-ar="يرجى تحديد مستوى موافقتك حول خططك المستقبلية (1 = أختلف بشدة، 5 = أوافق بشدة).">
+          Please indicate your level of agreement regarding your future plans (1 = Strongly Disagree, 5 = Strongly Agree).
         </p>
-        <div id="dl-questions"></div>
+        <div id="sec5-questions"></div>
       </div>
 
-      <!-- SECTION E: DEMOGRAPHICS -->
       <div class="section-card fade-in">
-        <div class="section-badge" data-en="Section E" data-ar="القسم هـ">Section E</div>
+        <div class="section-badge" data-en="Section 6" data-ar="القسم 6">Section 6</div>
         <h2 class="text-xl font-bold mb-1" style="color:#0a1f5c;"
-            data-en="Demographic Information" data-ar="البيانات الديموغرافية">Demographic Information</h2>
+            data-en="Tourism Development Perceptions" data-ar="تصورات التنمية السياحية">Tourism Development Perceptions</h2>
         <p class="text-sm text-gray-500 mb-5"
-           data-en="Please select the option that best describes you."
-           data-ar="يرجى اختيار الخيار الأنسب لك.">
-          Please select the option that best describes you.
+           data-en="Please indicate your level of agreement regarding the impact of sports events on tourism (1 = Strongly Disagree, 5 = Strongly Agree)."
+           data-ar="يرجى تحديد مستوى موافقتك حول تأثير الفعاليات الرياضية على السياحة (1 = أختلف بشدة، 5 = أوافق بشدة).">
+          Please indicate your level of agreement regarding the impact of sports events on tourism (1 = Strongly Disagree, 5 = Strongly Agree).
+        </p>
+        <div id="sec6-questions"></div>
+      </div>
+
+      <div class="section-card fade-in">
+        <div class="section-badge" data-en="Section 7" data-ar="القسم 7">Section 7</div>
+        <h2 class="text-xl font-bold mb-1" style="color:#0a1f5c;"
+            data-en="Demographic & Trip Information" data-ar="البيانات الديموغرافية ومعلومات الرحلة">Demographic & Trip Information</h2>
+        <p class="text-sm text-gray-500 mb-5"
+           data-en="Please provide some information about yourself for statistical analysis."
+           data-ar="يرجى تقديم بعض المعلومات عنك للتحليل الإحصائي.">
+          Please provide some information about yourself for statistical analysis.
         </p>
 
-        <!-- Gender -->
         <div class="mb-5" id="wrap-d1">
-          <p class="font-semibold text-gray-800 mb-2" data-en="1. Gender:" data-ar="1. الجنس:">1. Gender:</p>
-          <label class="demo-option" onclick="selectDemo(this,'d1')"><input type="radio" name="d1" value="Male"> <span data-en="Male" data-ar="ذكر">Male</span></label>
-          <label class="demo-option" onclick="selectDemo(this,'d1')"><input type="radio" name="d1" value="Female"> <span data-en="Female" data-ar="أنثى">Female</span></label>
+          <p class="font-semibold text-gray-800 mb-2" data-en="22. What is your age group?" data-ar="22. ما هي فئتك العمرية؟">22. What is your age group?</p>
+          <label class="demo-option" onclick="selectDemo(this,'d1')"><input type="radio" name="d1" value="18-25"> <span data-en="18–25" data-ar="18–25">18–25</span></label>
+          <label class="demo-option" onclick="selectDemo(this,'d1')"><input type="radio" name="d1" value="26-35"> <span data-en="26–35" data-ar="26–35">26–35</span></label>
+          <label class="demo-option" onclick="selectDemo(this,'d1')"><input type="radio" name="d1" value="36-45"> <span data-en="36–45" data-ar="36–45">36–45</span></label>
+          <label class="demo-option" onclick="selectDemo(this,'d1')"><input type="radio" name="d1" value="46-55"> <span data-en="46–55" data-ar="46–55">46–55</span></label>
+          <label class="demo-option" onclick="selectDemo(this,'d1')"><input type="radio" name="d1" value="56+"> <span data-en="56+" data-ar="أكثر من 56">56+</span></label>
           <p class="error-msg" id="err-d1" data-en="Please select an option." data-ar="يرجى اختيار إجابة.">Please select an option.</p>
         </div>
 
-        <!-- Age -->
         <div class="mb-5" id="wrap-d2">
-          <p class="font-semibold text-gray-800 mb-2" data-en="2. Age Group:" data-ar="2. الفئة العمرية:">2. Age Group:</p>
-          <label class="demo-option" onclick="selectDemo(this,'d2')"><input type="radio" name="d2" value="Under 18"> <span data-en="Under 18" data-ar="أقل من 18">Under 18</span></label>
-          <label class="demo-option" onclick="selectDemo(this,'d2')"><input type="radio" name="d2" value="18-25"> <span data-en="18–25" data-ar="18–25">18–25</span></label>
-          <label class="demo-option" onclick="selectDemo(this,'d2')"><input type="radio" name="d2" value="26-35"> <span data-en="26–35" data-ar="26–35">26–35</span></label>
-          <label class="demo-option" onclick="selectDemo(this,'d2')"><input type="radio" name="d2" value="36-45"> <span data-en="36–45" data-ar="36–45">36–45</span></label>
-          <label class="demo-option" onclick="selectDemo(this,'d2')"><input type="radio" name="d2" value="46-55"> <span data-en="46–55" data-ar="46–55">46–55</span></label>
-          <label class="demo-option" onclick="selectDemo(this,'d2')"><input type="radio" name="d2" value="Over 55"> <span data-en="Over 55" data-ar="أكثر من 55">Over 55</span></label>
+          <p class="font-semibold text-gray-800 mb-2" data-en="23. What is your gender?" data-ar="23. ما هو جنسك؟">23. What is your gender?</p>
+          <label class="demo-option" onclick="selectDemo(this,'d2')"><input type="radio" name="d2" value="Male"> <span data-en="Male" data-ar="ذكر">Male</span></label>
+          <label class="demo-option" onclick="selectDemo(this,'d2')"><input type="radio" name="d2" value="Female"> <span data-en="Female" data-ar="أنثى">Female</span></label>
+          <label class="demo-option" onclick="selectDemo(this,'d2')"><input type="radio" name="d2" value="Prefer not to say"> <span data-en="Prefer not to say" data-ar="أفضل عدم الإجابة">Prefer not to say</span></label>
           <p class="error-msg" id="err-d2" data-en="Please select an option." data-ar="يرجى اختيار إجابة.">Please select an option.</p>
         </div>
 
-        <!-- Education -->
         <div class="mb-5" id="wrap-d3">
-          <p class="font-semibold text-gray-800 mb-2" data-en="3. Highest Level of Education:" data-ar="3. أعلى مستوى تعليمي:">3. Highest Level of Education:</p>
-          <label class="demo-option" onclick="selectDemo(this,'d3')"><input type="radio" name="d3" value="High School"> <span data-en="High School or below" data-ar="ثانوية عامة أو أقل">High School or below</span></label>
-          <label class="demo-option" onclick="selectDemo(this,'d3')"><input type="radio" name="d3" value="Diploma"> <span data-en="Diploma / Vocational Training" data-ar="دبلوم / تدريب مهني">Diploma / Vocational Training</span></label>
-          <label class="demo-option" onclick="selectDemo(this,'d3')"><input type="radio" name="d3" value="Bachelor"> <span data-en="Bachelor's Degree" data-ar="بكالوريوس">Bachelor's Degree</span></label>
-          <label class="demo-option" onclick="selectDemo(this,'d3')"><input type="radio" name="d3" value="Postgraduate"> <span data-en="Postgraduate Degree (Master's/PhD)" data-ar="دراسات عليا (ماجستير/دكتوراه)">Postgraduate Degree (Master's/PhD)</span></label>
+          <p class="font-semibold text-gray-800 mb-2" data-en="24. What is your nationality?" data-ar="24. ما هي جنسيتك؟">24. What is your nationality?</p>
+          <label class="demo-option" onclick="selectDemo(this,'d3')"><input type="radio" name="d3" value="Saudi National"> <span data-en="Saudi National" data-ar="مواطن سعودي">Saudi National</span></label>
+          <label class="demo-option" onclick="selectDemo(this,'d3')"><input type="radio" name="d3" value="Non-Saudi Resident"> <span data-en="Non-Saudi Resident" data-ar="مقيم غير سعودي">Non-Saudi Resident</span></label>
+          <label class="demo-option" onclick="selectDemo(this,'d3')"><input type="radio" name="d3" value="International Tourist"> <span data-en="International Tourist" data-ar="سائح دولي">International Tourist</span></label>
           <p class="error-msg" id="err-d3" data-en="Please select an option." data-ar="يرجى اختيار إجابة.">Please select an option.</p>
         </div>
 
-        <!-- Visit Count -->
         <div class="mb-5" id="wrap-d4">
-          <p class="font-semibold text-gray-800 mb-2" data-en="4. Number of times you have visited Riyadh Season (across all seasons):" data-ar="4. عدد مرات زيارتك لموسم الرياض (عبر جميع المواسم):">4. Number of times you have visited Riyadh Season (across all seasons):</p>
-          <label class="demo-option" onclick="selectDemo(this,'d4')"><input type="radio" name="d4" value="1"> <span data-en="1 time (First-time visitor)" data-ar="مرة واحدة (زائر لأول مرة)">1 time (First-time visitor)</span></label>
-          <label class="demo-option" onclick="selectDemo(this,'d4')"><input type="radio" name="d4" value="2-3"> <span data-en="2–3 times" data-ar="2–3 مرات">2–3 times</span></label>
-          <label class="demo-option" onclick="selectDemo(this,'d4')"><input type="radio" name="d4" value="4-5"> <span data-en="4–5 times" data-ar="4–5 مرات">4–5 times</span></label>
-          <label class="demo-option" onclick="selectDemo(this,'d4')"><input type="radio" name="d4" value="5+"> <span data-en="More than 5 times" data-ar="أكثر من 5 مرات">More than 5 times</span></label>
+          <p class="font-semibold text-gray-800 mb-2" data-en="25. Was this your first time attending a major sports event in Saudi Arabia?" data-ar="25. هل كانت هذه المرة الأولى التي تحضر فيها فعالية رياضية كبرى في السعودية؟">25. Was this your first time attending a major sports event in Saudi Arabia?</p>
+          <label class="demo-option" onclick="selectDemo(this,'d4')"><input type="radio" name="d4" value="Yes"> <span data-en="Yes, first time" data-ar="نعم، أول مرة">Yes, first time</span></label>
+          <label class="demo-option" onclick="selectDemo(this,'d4')"><input type="radio" name="d4" value="No"> <span data-en="No, I have attended multiple events" data-ar="لا، حضرت عدة فعاليات">No, I have attended multiple events</span></label>
           <p class="error-msg" id="err-d4" data-en="Please select an option." data-ar="يرجى اختيار إجابة.">Please select an option.</p>
         </div>
       </div>
 
-      <!-- Submit -->
       <div class="text-center mb-10">
         <button type="button" id="submit-btn" onclick="submitSurvey()"
                 data-en="Submit Survey" data-ar="إرسال الاستبيان">Submit Survey</button>
@@ -498,7 +530,6 @@
 
     </form>
 
-    <!-- Thank You -->
     <div id="thank-you" class="flex-col items-center text-center py-16" style="display:none;">
       <div class="text-6xl mb-4">🎉</div>
       <h2 class="text-2xl font-bold mb-3" style="color:#0a1f5c;"
@@ -518,33 +549,33 @@
 
 <script>
 // ─── DATA ────────────────────────────────────────────────────────────────────
-const EQ_QUESTIONS = [
-  { id:'eq1',  num:1,  en:'The programs and shows offered at Riyadh Season were highly attractive and engaging.', ar:'البرامج والعروض المقدمة في موسم الرياض كانت جذابة للغاية.' },
-  { id:'eq2',  num:2,  en:'There was a wide variety of activities suitable for different interests and age groups.', ar:'كان هناك تنوع واسع في الأنشطة المناسبة لمختلف الاهتمامات والفئات العمرية.' },
-  { id:'eq3',  num:3,  en:'The staff members were professional, courteous, and helpful during my visit.', ar:'كان أعضاء الفريق محترفين ومهذبين ومتعاونين خلال زيارتي.' },
-  { id:'eq4',  num:4,  en:'The facilities (e.g., restrooms, seating areas, dining zones) were clean and well-maintained.', ar:'كانت المرافق (مثل دورات المياه ومناطق الجلوس ومناطق تناول الطعام) نظيفة وصالحة للاستخدام.' },
-  { id:'eq5',  num:5,  en:'I felt a strong sense of safety and security throughout the event venues.', ar:'شعرت بشعور قوي بالأمان والسلامة في جميع أماكن الفعاليات.' },
-  { id:'eq6',  num:6,  en:'The event locations were easily accessible via various transportation methods.', ar:'كانت مواقع الفعاليات سهلة الوصول عبر وسائل النقل المختلفة.' },
-  { id:'eq7',  num:7,  en:'Crowd management and pedestrian flow were handled efficiently by the organizers.', ar:'تم التعامل مع إدارة الحشود وتدفق المشاة بكفاءة من قبل المنظمين.' },
-  { id:'eq8',  num:8,  en:'Information regarding event schedules and maps was clearly provided and easy to find.', ar:'كانت المعلومات المتعلقة بجداول الفعاليات والخرائط واضحة وسهلة الإيجاد.' },
-  { id:'eq9',  num:9,  en:'The ticketing process and digital services (app/website) were user-friendly and efficient.', ar:'كانت عملية شراء التذاكر والخدمات الرقمية (التطبيق/الموقع) سهلة الاستخدام وفعّالة.' },
-  { id:'eq10', num:10, en:'The overall atmosphere of the events was vibrant and culturally enriching.', ar:'كان الجو العام للفعاليات نابضاً بالحياة وثرياً ثقافياً.' },
-  { id:'eq11', num:11, en:'The quality of food and beverage services met high standards.', ar:'كانت جودة خدمات الأطعمة والمشروبات تلبي المعايير العالية.' },
-  { id:'eq12', num:12, en:'The events were well-organized and adhered to the published timings.', ar:'كانت الفعاليات منظمة جيداً والتزمت بالمواعيد المعلنة.' },
+const SEC2_QUESTIONS = [
+  { id:'sq1', num:4, en:'The event was professionally managed and organized.', ar:'كانت الفعالية تدار وتنظم باحترافية.' },
+  { id:'sq2', num:5, en:'I felt safe and secure throughout the duration of the event.', ar:'شعرت بالأمان والسلامة طوال فترة الفعالية.' },
+  { id:'sq3', num:6, en:'The venue\'s facilities and infrastructure (e.g., seating, signage) were of high quality.', ar:'كانت مرافق الموقع والبنية التحتية (مثل المقاعد، اللوحات الإرشادية) ذات جودة عالية.' },
+  { id:'sq4', num:7, en:'The event atmosphere was vibrant and highly enjoyable.', ar:'كان جو الفعالية نابضاً بالحياة وممتعاً للغاية.' },
+  { id:'sq5', num:8, en:'Essential information and assistance were easily accessible during the event.', ar:'كان من السهل الوصول إلى المعلومات الأساسية والمساعدة أثناء الفعالية.' },
+  { id:'sq6', num:9, en:'The overall management of the event met high international standards.', ar:'الإدارة العامة للفعالية لبت المعايير الدولية العالية.' },
 ];
-const VS_QUESTIONS = [
-  { id:'vs1', num:13, en:'Overall, I am very satisfied with my experience at Riyadh Season.', ar:'بشكل عام، أنا راضٍ جداً عن تجربتي في موسم الرياض.' },
-  { id:'vs2', num:14, en:'My experience at Riyadh Season fully met my initial expectations.', ar:'لبّت تجربتي في موسم الرياض توقعاتي الأولية بالكامل.' },
-  { id:'vs3', num:15, en:'The quality of the experience exceeded what I had expected before visiting.', ar:'تجاوزت جودة التجربة ما توقعته قبل الزيارة.' },
-  { id:'vs4', num:16, en:'I am pleased with my decision to spend time and resources at Riyadh Season.', ar:'أنا سعيد بقراري قضاء الوقت والموارد في موسم الرياض.' },
-  { id:'vs5', num:17, en:'Riyadh Season provided excellent value for the money spent.', ar:'قدّم موسم الرياض قيمة ممتازة مقابل المبلغ المنفق.' },
+const SEC3_QUESTIONS = [
+  { id:'di1', num:10, en:'Saudi Arabia is a modern and attractive destination for international tourists.', ar:'المملكة العربية السعودية وجهة حديثة وجذابة للسياح الدوليين.' },
+  { id:'di2', num:11, en:'Hosting major sports events has significantly improved my perception of Saudi Arabia.', ar:'استضافة الفعاليات الرياضية الكبرى حسّن بشكل كبير من نظرتي للمملكة.' },
+  { id:'di3', num:12, en:'I view Saudi Arabia as a dynamic country with a rich variety of tourism offerings.', ar:'أرى السعودية كدولة ديناميكية تتمتع بتنوع غني في العروض السياحية.' },
 ];
-const DL_QUESTIONS = [
-  { id:'dl1', num:18, en:'I intend to visit Riyadh Season again in future editions.', ar:'أنوي زيارة موسم الرياض مرة أخرى في الدورات القادمة.' },
-  { id:'dl2', num:19, en:'I will recommend Riyadh Season to my friends, family, and colleagues.', ar:'سأوصي بموسم الرياض لأصدقائي وعائلتي وزملائي.' },
-  { id:'dl3', num:20, en:'I will share positive comments about my experience at Riyadh Season on social media or in person.', ar:'سأشارك تعليقات إيجابية حول تجربتي في موسم الرياض على وسائل التواصل الاجتماعي أو شخصياً.' },
-  { id:'dl4', num:21, en:'Riyadh Season will be my first choice for entertainment events in the region.', ar:'سيكون موسم الرياض خياري الأول لفعاليات الترفيه في المنطقة.' },
-  { id:'dl5', num:22, en:'I consider myself a loyal visitor to the Riyadh Season brand.', ar:'أعتبر نفسي زائراً مخلصاً لعلامة موسم الرياض.' },
+const SEC4_QUESTIONS = [
+  { id:'vs1', num:13, en:'Overall, I am very satisfied with my decision to attend the sports event.', ar:'بشكل عام، أنا راضٍ جداً عن قراري بحضور الفعالية الرياضية.' },
+  { id:'vs2', num:14, en:'My experience at the event was much better than I had expected.', ar:'كانت تجربتي في الفعالية أفضل بكثير مما توقعت.' },
+  { id:'vs3', num:15, en:'I am pleased with the quality of the tourism experience during my stay.', ar:'أنا سعيد بجودة التجربة السياحية خلال فترة إقامتي.' },
+];
+const SEC5_QUESTIONS = [
+  { id:'bi1', num:16, en:'I intend to attend another sports event in Saudi Arabia in the future.', ar:'أنوي حضور فعالية رياضية أخرى في السعودية مستقبلاً.' },
+  { id:'bi2', num:17, en:'I would like to visit Saudi Arabia again for general tourism purposes.', ar:'أود زيارة السعودية مرة أخرى لأغراض السياحة العامة.' },
+  { id:'bi3', num:18, en:'I will highly recommend Saudi Arabia as a sports tourism destination to others.', ar:'سأوصي بشدة بالسعودية كوجهة للسياحة الرياضية للآخرين.' },
+];
+const SEC6_QUESTIONS = [
+  { id:'td1', num:19, en:'Hosting sports events encourages me to stay longer in Saudi Arabia than I initially planned.', ar:'استضافة الفعاليات الرياضية يشجعني على البقاء في السعودية لفترة أطول مما خططت له.' },
+  { id:'td2', num:20, en:'I am willing to spend more on local tourism services (hotels, dining) due to the event\'s quality.', ar:'أنا مستعد لإنفاق المزيد على الخدمات السياحية المحلية (فنادق، مطاعم) بسبب جودة الفعالية.' },
+  { id:'td3', num:21, en:'Sports events significantly enhance the overall tourism appeal of Saudi Arabia.', ar:'الفعاليات الرياضية تعزز بشكل كبير الجاذبية السياحية العامة للسعودية.' },
 ];
 
 const LIKERT_LABELS = {
@@ -555,7 +586,6 @@ const LIKERT_LABELS = {
 // ─── STATE ───────────────────────────────────────────────────────────────────
 let currentLang = 'en';
 const responses = {};
-const TOTAL_REQUIRED = 2 + EQ_QUESTIONS.length + VS_QUESTIONS.length + DL_QUESTIONS.length + 4;
 
 // ─── BUILD LIKERT QUESTIONS ──────────────────────────────────────────────────
 function buildLikertBlock(q) {
@@ -568,16 +598,18 @@ function buildLikertBlock(q) {
     </button>`;
   }
   return `<div class="mb-6" id="wrap-${q.id}">
-    <p class="font-semibold text-gray-800 mb-2 text-sm leading-snug" data-en="EQ${q.num < 13 ? q.id.replace('eq','') : ''} ${q.en}" data-ar="${q.num}. ${q.ar}">${q.num}. ${currentLang==='ar' ? q.ar : q.en}</p>
+    <p class="font-semibold text-gray-800 mb-2 text-sm leading-snug" data-en="${q.num}. ${q.en}" data-ar="${q.num}. ${q.ar}">${q.num}. ${currentLang==='ar' ? q.ar : q.en}</p>
     <div class="likert-row" id="row-${q.id}">${btns}</div>
     <p class="error-msg" id="err-${q.id}" data-en="Please select a rating." data-ar="يرجى اختيار تقييم.">Please select a rating.</p>
   </div>`;
 }
 
 function buildAll() {
-  document.getElementById('eq-questions').innerHTML = EQ_QUESTIONS.map(buildLikertBlock).join('');
-  document.getElementById('vs-questions').innerHTML = VS_QUESTIONS.map(buildLikertBlock).join('');
-  document.getElementById('dl-questions').innerHTML = DL_QUESTIONS.map(buildLikertBlock).join('');
+  document.getElementById('sec2-questions').innerHTML = SEC2_QUESTIONS.map(buildLikertBlock).join('');
+  document.getElementById('sec3-questions').innerHTML = SEC3_QUESTIONS.map(buildLikertBlock).join('');
+  document.getElementById('sec4-questions').innerHTML = SEC4_QUESTIONS.map(buildLikertBlock).join('');
+  document.getElementById('sec5-questions').innerHTML = SEC5_QUESTIONS.map(buildLikertBlock).join('');
+  document.getElementById('sec6-questions').innerHTML = SEC6_QUESTIONS.map(buildLikertBlock).join('');
 }
 
 // ─── INTERACTIONS ────────────────────────────────────────────────────────────
@@ -619,7 +651,13 @@ function selectScreen(label, name, val) {
 
 function updateProgress() {
   let filled = 0;
-  const allKeys = ['sc1','sc2',...EQ_QUESTIONS.map(q=>q.id),...VS_QUESTIONS.map(q=>q.id),...DL_QUESTIONS.map(q=>q.id),'d1','d2','d3','d4'];
+  const allKeys = ['sc1','sc2','sc3',
+    ...SEC2_QUESTIONS.map(q=>q.id),
+    ...SEC3_QUESTIONS.map(q=>q.id),
+    ...SEC4_QUESTIONS.map(q=>q.id),
+    ...SEC5_QUESTIONS.map(q=>q.id),
+    ...SEC6_QUESTIONS.map(q=>q.id),
+    'd1','d2','d3','d4'];
   allKeys.forEach(k => { if (responses[k]) filled++; });
   const pct = Math.round((filled / allKeys.length) * 100);
   document.getElementById('progress-bar').style.width = pct + '%';
@@ -636,7 +674,7 @@ function toggleLang() {
   document.querySelectorAll('[data-en]').forEach(el => {
     const txt = el.getAttribute('data-' + currentLang);
     if (txt) {
-      if (el.tagName === 'P' || el.tagName === 'H1' || el.tagName === 'H2' || el.tagName === 'SPAN' || el.tagName === 'BUTTON') {
+      if (el.tagName === 'P' || el.tagName === 'H1' || el.tagName === 'H2' || el.tagName === 'SPAN' || el.tagName === 'BUTTON' || el.tagName === 'DIV') {
         if (txt.includes('<br')) el.innerHTML = txt;
         else el.textContent = txt;
       }
@@ -653,7 +691,13 @@ function submitSurvey() {
     return;
   }
   let valid = true;
-  const allKeys = ['sc1','sc2',...EQ_QUESTIONS.map(q=>q.id),...VS_QUESTIONS.map(q=>q.id),...DL_QUESTIONS.map(q=>q.id),'d1','d2','d3','d4'];
+  const allKeys = ['sc1','sc2','sc3',
+    ...SEC2_QUESTIONS.map(q=>q.id),
+    ...SEC3_QUESTIONS.map(q=>q.id),
+    ...SEC4_QUESTIONS.map(q=>q.id),
+    ...SEC5_QUESTIONS.map(q=>q.id),
+    ...SEC6_QUESTIONS.map(q=>q.id),
+    'd1','d2','d3','d4'];
   allKeys.forEach(k => {
     if (!responses[k]) {
       const err = document.getElementById('err-' + k);
@@ -679,12 +723,12 @@ function saveResponse() {
   const all = loadResponses();
   const entry = { timestamp: new Date().toLocaleString(), ...responses };
   all.push(entry);
-  localStorage.setItem('riyadh_season_responses', JSON.stringify(all));
+  localStorage.setItem('sports_tourism_responses', JSON.stringify(all));
 }
 function loadResponses() {
-  try { return JSON.parse(localStorage.getItem('riyadh_season_responses') || '[]'); } catch { return []; }
+  try { return JSON.parse(localStorage.getItem('sports_tourism_responses') || '[]'); } catch { return []; }
 }
-function clearAllResponses() { localStorage.removeItem('riyadh_season_responses'); }
+function clearAllResponses() { localStorage.removeItem('sports_tourism_responses'); }
 
 // ─── RESET ───────────────────────────────────────────────────────────────────
 function resetForm() {
@@ -709,51 +753,52 @@ function openDashboard() {
   const all = loadResponses();
   document.getElementById('dash-count').textContent = all.length;
   if (all.length > 0) {
-    const genders = {}, ages = {}, edu = {};
+    const ages = {}, genders = {};
     all.forEach(r => {
-      genders[r.d1] = (genders[r.d1] || 0) + 1;
-      ages[r.d2] = (ages[r.d2] || 0) + 1;
-      edu[r.d3] = (edu[r.d3] || 0) + 1;
+      ages[r.d1] = (ages[r.d1] || 0) + 1;
+      genders[r.d2] = (genders[r.d2] || 0) + 1;
     });
     const top = obj => Object.entries(obj).sort((a,b)=>b[1]-a[1])[0];
     const mean = keys => {
       const vals = all.flatMap(r => keys.map(k => Number(r[k]))).filter(v => v > 0);
       return vals.length ? (vals.reduce((a,b)=>a+b,0)/vals.length).toFixed(2) : 'N/A';
     };
-    const eqAvg = mean(EQ_QUESTIONS.map(q=>q.id));
-    const vsAvg = mean(VS_QUESTIONS.map(q=>q.id));
-    const dlAvg = mean(DL_QUESTIONS.map(q=>q.id));
-    const tg = top(genders), ta = top(ages);
+    
+    const sqAvg = mean(SEC2_QUESTIONS.map(q=>q.id));
+    const vsAvg = mean(SEC4_QUESTIONS.map(q=>q.id));
+    const tdAvg = mean(SEC6_QUESTIONS.map(q=>q.id));
+    
+    const ta = top(ages), tg = top(genders);
     document.getElementById('stats-grid').innerHTML = `
-      <div style="background:#eff6ff;border-radius:0.5rem;padding:0.75rem;text-align:center;">
-        <p style="font-size:0.75rem;color:#6b7280;">Top Gender</p>
-        <p style="font-weight:700;color:#0a1f5c;">${tg ? tg[0]+' ('+tg[1]+')' : '—'}</p>
-      </div>
       <div style="background:#eff6ff;border-radius:0.5rem;padding:0.75rem;text-align:center;">
         <p style="font-size:0.75rem;color:#6b7280;">Top Age Group</p>
         <p style="font-weight:700;color:#0a1f5c;">${ta ? ta[0]+' ('+ta[1]+')' : '—'}</p>
       </div>
+      <div style="background:#eff6ff;border-radius:0.5rem;padding:0.75rem;text-align:center;">
+        <p style="font-size:0.75rem;color:#6b7280;">Top Gender</p>
+        <p style="font-weight:700;color:#0a1f5c;">${tg ? tg[0]+' ('+tg[1]+')' : '—'}</p>
+      </div>
       <div style="background:#e0f2fe;border-radius:0.5rem;padding:0.75rem;text-align:center;">
         <p style="font-size:0.75rem;color:#6b7280;">Avg. Event Quality</p>
-        <p style="font-weight:700;color:#0369a1;">${eqAvg} / 5</p>
+        <p style="font-weight:700;color:#0369a1;">${sqAvg} / 5</p>
       </div>
       <div style="background:#e0f2fe;border-radius:0.5rem;padding:0.75rem;text-align:center;">
         <p style="font-size:0.75rem;color:#6b7280;">Avg. Satisfaction</p>
         <p style="font-weight:700;color:#0369a1;">${vsAvg} / 5</p>
       </div>
       <div style="background:#eff6ff;border-radius:0.5rem;padding:0.75rem;text-align:center;grid-column:span 2;">
-        <p style="font-size:0.75rem;color:#6b7280;">Avg. Destination Loyalty</p>
-        <p style="font-weight:700;color:#0a1f5c;">${dlAvg} / 5</p>
+        <p style="font-size:0.75rem;color:#6b7280;">Avg. Tourism Dev. Perceptions</p>
+        <p style="font-weight:700;color:#0a1f5c;">${tdAvg} / 5</p>
       </div>`;
     const recent = all.slice(-5).reverse();
     document.getElementById('recent-responses').innerHTML = `
       <p style="font-size:0.875rem;font-weight:600;color:#374151;margin-bottom:0.5rem;">Recent Responses (last ${recent.length}):</p>
       <div style="overflow-x:auto">
       <table class="resp-table">
-        <thead><tr><th>#</th><th>Time</th><th>Gender</th><th>Age</th><th>EQ Avg</th></tr></thead>
+        <thead><tr><th>#</th><th>Time</th><th>Age</th><th>Gender</th><th>EQ Avg</th></tr></thead>
         <tbody>
           ${recent.map((r,i) => {
-            const vals = EQ_QUESTIONS.map(q=>Number(r[q.id])).filter(v=>v>0);
+            const vals = SEC2_QUESTIONS.map(q=>Number(r[q.id])).filter(v=>v>0);
             const avg = vals.length ? (vals.reduce((a,b)=>a+b,0)/vals.length).toFixed(1) : '—';
             return `<tr><td>${all.length-i}</td><td>${r.timestamp}</td><td>${r.d1||'—'}</td><td>${r.d2||'—'}</td><td>${avg}</td></tr>`;
           }).join('')}
@@ -772,39 +817,49 @@ document.getElementById('dashboard').addEventListener('click', function(e) { if 
 function exportToExcel() {
   const all = loadResponses();
   if (!all.length) { alert('No responses to export yet.'); return; }
-  const headers = ['Timestamp','Gender','Age Group','Education','Visit Count',
-    ...EQ_QUESTIONS.map((q,i)=>`EQ${i+1}`),
-    ...VS_QUESTIONS.map((q,i)=>`VS${i+1}`),
-    ...DL_QUESTIONS.map((q,i)=>`DL${i+1}`)];
+  const headers = ['Timestamp','Age Group','Gender','Nationality','First Time','Event Type',
+    ...SEC2_QUESTIONS.map((q,i)=>`Q${q.num}`),
+    ...SEC3_QUESTIONS.map((q,i)=>`Q${q.num}`),
+    ...SEC4_QUESTIONS.map((q,i)=>`Q${q.num}`),
+    ...SEC5_QUESTIONS.map((q,i)=>`Q${q.num}`),
+    ...SEC6_QUESTIONS.map((q,i)=>`Q${q.num}`)];
   const rows = all.map(r => [
-    r.timestamp, r.d1, r.d2, r.d3, r.d4,
-    ...EQ_QUESTIONS.map(q=>r[q.id]||''),
-    ...VS_QUESTIONS.map(q=>r[q.id]||''),
-    ...DL_QUESTIONS.map(q=>r[q.id]||''),
+    r.timestamp, r.d1, r.d2, r.d3, r.d4, r.sc3,
+    ...SEC2_QUESTIONS.map(q=>r[q.id]||''),
+    ...SEC3_QUESTIONS.map(q=>r[q.id]||''),
+    ...SEC4_QUESTIONS.map(q=>r[q.id]||''),
+    ...SEC5_QUESTIONS.map(q=>r[q.id]||''),
+    ...SEC6_QUESTIONS.map(q=>r[q.id]||''),
   ]);
   const ws = XLSX.utils.aoa_to_sheet([headers, ...rows]);
-  ws['!cols'] = [{wch:22},{wch:10},{wch:10},{wch:14},{wch:14},...Array(EQ_QUESTIONS.length+VS_QUESTIONS.length+DL_QUESTIONS.length).fill({wch:6})];
+  
+  const likertCount = SEC2_QUESTIONS.length + SEC3_QUESTIONS.length + SEC4_QUESTIONS.length + SEC5_QUESTIONS.length + SEC6_QUESTIONS.length;
+  ws['!cols'] = [{wch:22},{wch:10},{wch:12},{wch:20},{wch:14},{wch:20},...Array(likertCount).fill({wch:6})];
+  
   const wb = XLSX.utils.book_new();
   XLSX.utils.book_append_sheet(wb, ws, 'Survey Responses');
+  
   const calcMean = keys => {
     const vals = all.flatMap(r=>keys.map(k=>Number(r[k]))).filter(v=>v>0);
     return vals.length ? (vals.reduce((a,b)=>a+b,0)/vals.length).toFixed(2) : 'N/A';
   };
   const summary = [
-    ['Riyadh Season Survey — Summary'],
-    ['Topic','The Impact of Riyadh Season Event Quality on Visitor Satisfaction and Destination Loyalty'],
+    ['Sports Events Tourism Survey — Summary'],
+    ['Topic','The Role of Sports Events in Tourism Development in Saudi Arabia'],
     ['Export Date', new Date().toLocaleString()],
     ['Total Responses', all.length],
     [],
     ['Variable','Items','Average Score'],
-    ['Event Quality (EQ)', 'EQ1–EQ12', calcMean(EQ_QUESTIONS.map(q=>q.id))],
-    ['Visitor Satisfaction (VS)', 'VS1–VS5', calcMean(VS_QUESTIONS.map(q=>q.id))],
-    ['Destination Loyalty (DL)', 'DL1–DL5', calcMean(DL_QUESTIONS.map(q=>q.id))],
+    ['Sports Event Quality & Experience', 'Q4–Q9', calcMean(SEC2_QUESTIONS.map(q=>q.id))],
+    ['Destination Image', 'Q10–Q12', calcMean(SEC3_QUESTIONS.map(q=>q.id))],
+    ['Visitor Satisfaction', 'Q13–Q15', calcMean(SEC4_QUESTIONS.map(q=>q.id))],
+    ['Behavioral Intentions', 'Q16–Q18', calcMean(SEC5_QUESTIONS.map(q=>q.id))],
+    ['Tourism Development Perceptions', 'Q19–Q21', calcMean(SEC6_QUESTIONS.map(q=>q.id))],
   ];
   const ws2 = XLSX.utils.aoa_to_sheet(summary);
-  ws2['!cols'] = [{wch:30},{wch:40},{wch:16}];
+  ws2['!cols'] = [{wch:40},{wch:20},{wch:16}];
   XLSX.utils.book_append_sheet(wb, ws2, 'Summary');
-  XLSX.writeFile(wb, `RiyadhSeason_Survey_${new Date().toISOString().slice(0,10)}.xlsx`);
+  XLSX.writeFile(wb, `SportsTourism_Survey_${new Date().toISOString().slice(0,10)}.xlsx`);
 }
 
 function clearResponses() {
