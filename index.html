@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sports Events Tourism Survey | استبيان السياحة الرياضية</title>
-  <meta name="description" content="Academic survey on the role of sports events in tourism development in Saudi Arabia.">
+  <meta name="description" content="Academic survey evaluating the contribution of sports events to tourism growth in Saudi Arabia.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
@@ -140,7 +140,6 @@
     }
     #submit-btn:hover { background: var(--primary-light); transform: translateY(-1px); }
     #thank-you { display: none; }
-    #thank-you.show { display: flex; }
     .error-msg { color: #dc2626; font-size: 0.78rem; margin-top: 0.25rem; display: none; }
     .error-msg.show { display: block; }
     html[dir="rtl"] #lang-toggle { right: auto; left: 4.5rem; }
@@ -161,7 +160,7 @@
     .hero::before {
       content: '';
       position: absolute; inset: 0;
-      background: url('https://images.unsplash.com/photo-1586724237569-f3d0c1dee8c6?w=1200&q=60') center/cover no-repeat;
+      background: url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1200&q=60') center/cover no-repeat;
       opacity: 0.10;
     }
     .hero > * { position: relative; }
@@ -212,12 +211,8 @@
     .mb-6 { margin-bottom: 1.5rem; }
     .mb-10 { margin-bottom: 2.5rem; }
     .mt-3 { margin-top: 0.75rem; }
-    .mt-4 { margin-top: 1rem; }
-    .mt-6 { margin-top: 1.5rem; }
-    .ml-1 { margin-left: 0.25rem; }
     .text-xs { font-size: 0.75rem; line-height: 1rem; }
     .text-sm { font-size: 0.875rem; line-height: 1.25rem; }
-    .text-base { font-size: 1rem; line-height: 1.5rem; }
     .text-lg { font-size: 1.125rem; line-height: 1.75rem; }
     .text-xl { font-size: 1.25rem; line-height: 1.75rem; }
     .text-2xl { font-size: 1.5rem; line-height: 2rem; }
@@ -225,12 +220,10 @@
     .font-semibold { font-weight: 600; }
     .font-bold { font-weight: 700; }
     .text-center { text-align: center; }
-    .text-left { text-align: left; }
     .flex { display: flex; }
     .flex-col { flex-direction: column; }
     .flex-wrap { flex-wrap: wrap; }
     .items-center { align-items: center; }
-    .justify-center { justify-content: center; }
     .justify-between { justify-content: space-between; }
     .gap-3 { gap: 0.75rem; }
     .grid { display: grid; }
@@ -238,25 +231,18 @@
     .col-span-2 { grid-column: span 2 / span 2; }
     .w-full { width: 100%; }
     .rounded-full { border-radius: 9999px; }
-    .rounded-xl { border-radius: 0.75rem; }
     .bg-gray-200 { background-color: #e5e7eb; }
-    .h-2\.5 { height: 0.625rem; }
     .opacity-75 { opacity: 0.75; }
-    .opacity-90 { opacity: 0.9; }
     .leading-snug { line-height: 1.375; }
     .leading-relaxed { line-height: 1.625; }
     .text-white { color: #fff; }
     .text-gray-500 { color: #6b7280; }
     .text-gray-700 { color: #374151; }
     .text-gray-800 { color: #1f2937; }
-    .bg-blue-50 { background-color: #eff6ff; }
-    .bg-yellow-50 { background-color: #fefce8; }
-    .px-2 { padding-left: 0.5rem; padding-right: 0.5rem; }
-    .py-0\.5 { padding-top: 0.125rem; padding-bottom: 0.125rem; }
     .text-6xl { font-size: 3.75rem; line-height: 1; }
     .block { display: block; }
     p { margin: 0; }
-    h1, h2 { margin: 0; }
+    h1, h2, h3 { margin: 0; }
   </style>
 </head>
 <body>
@@ -264,28 +250,28 @@
   <button id="lang-toggle" onclick="toggleLang()">عربي 🌐</button>
 
   <button id="admin-toggle" onclick="openDashboard()">
-    📊 <span id="admin-btn-label">Responses</span>
+    📊 <span>Responses</span>
     <span id="response-count-badge" style="background:#fff;color:#0a1f5c;border-radius:9999px;padding:0.125rem 0.5rem;font-size:0.75rem;font-weight:700;margin-left:0.25rem;">0</span>
   </button>
 
   <div id="dashboard" role="dialog" aria-modal="true">
     <div id="dashboard-panel">
       <button id="close-dashboard" onclick="closeDashboard()">✕</button>
-      <h2 class="text-xl font-bold mb-1" style="color:#0a1f5c;" id="dash-title">📊 Survey Responses Dashboard</h2>
-      <p class="text-sm text-gray-500 mb-4" id="dash-subtitle">All responses are saved in this browser.</p>
+      <h2 class="text-xl font-bold mb-1" style="color:#0a1f5c;">📊 Survey Responses Dashboard</h2>
+      <p class="text-sm text-gray-500 mb-4">All responses are saved in this browser.</p>
       <div class="flex items-center gap-3 mb-5">
         <div class="counter-badge">
           <span>📝</span>
           <span id="dash-count">0</span>
-          <span id="dash-count-label">Responses Collected</span>
+          <span>Responses Collected</span>
         </div>
       </div>
       <div id="stats-grid" class="grid grid-cols-2 gap-3 mb-5">
-        <p class="text-sm text-gray-500 col-span-2">No responses yet. Share the survey link to start collecting data.</p>
+        <p class="text-sm text-gray-500 col-span-2">No responses yet.</p>
       </div>
       <div class="flex gap-3 flex-wrap mb-5">
-        <button id="export-btn" onclick="exportToExcel()">📥 <span id="export-label">Export to Excel (.xlsx)</span></button>
-        <button id="clear-btn" onclick="clearResponses()">🗑️ <span id="clear-label">Clear All</span></button>
+        <button id="export-btn" onclick="exportToExcel()">📥 Export to Excel (.xlsx)</button>
+        <button id="clear-btn" onclick="clearResponses()">🗑️ Clear All</button>
       </div>
       <div id="recent-responses"></div>
     </div>
@@ -300,9 +286,9 @@
     <div class="hero fade-in">
       <div class="section-badge" data-en="Academic Research Survey" data-ar="استبيان بحث أكاديمي">Academic Research Survey</div>
       <h1 class="text-2xl md-text-3xl font-bold mb-2 leading-snug"
-          data-en="The Role of Sports Events in Tourism Development in Saudi Arabia"
-          data-ar="دور الفعاليات الرياضية في التنمية السياحية في المملكة العربية السعودية">
-        The Role of Sports Events in Tourism Development in Saudi Arabia
+          data-en="Evaluating the Contribution of Sports Events to Tourism Growth in Saudi Arabia"
+          data-ar="تقييم مساهمة الفعاليات الرياضية في نمو السياحة في المملكة العربية السعودية">
+        Evaluating the Contribution of Sports Events to Tourism Growth in Saudi Arabia
       </h1>
       <p class="text-sm opacity-75 mt-3"
          data-en="Academic Research Survey · 5-Point Likert Scale"
@@ -312,12 +298,12 @@
     </div>
 
     <div class="sticky-progress fade-in">
-      <div class="flex justify-between items-center mb-1 px-1">
-        <span class="text-xs font-semibold text-gray-500" id="progress-label" data-en="Survey Progress" data-ar="تقدم الاستبيان">Survey Progress</span>
+      <div class="flex justify-between items-center mb-1" style="padding-left:0.25rem;padding-right:0.25rem;">
+        <span class="text-xs font-semibold text-gray-500" data-en="Survey Progress" data-ar="تقدم الاستبيان">Survey Progress</span>
         <span class="text-xs font-bold" style="color:#1a3a8f;" id="progress-pct">0%</span>
       </div>
-      <div class="w-full bg-gray-200 rounded-full h-2\.5">
-        <div id="progress-bar" class="h-2\.5 rounded-full" style="width:0%;background:linear-gradient(90deg,#0a1f5c,#4a90d9);height:0.625rem;border-radius:9999px;"></div>
+      <div class="w-full bg-gray-200 rounded-full" style="height:0.625rem;">
+        <div id="progress-bar" style="width:0%;background:linear-gradient(90deg,#0a1f5c,#4a90d9);height:0.625rem;border-radius:9999px;"></div>
       </div>
     </div>
 
@@ -325,26 +311,27 @@
       <h2 class="text-lg font-bold mb-3" style="color:#0a1f5c;"
           data-en="Participant Information" data-ar="معلومات للمشارك">Participant Information</h2>
       <p class="text-sm text-gray-700 leading-relaxed"
-         data-en="Dear Participant,&lt;br/&gt;&lt;br/&gt;You are invited to participate in a study exploring the impact of sports events on tourism development in Saudi Arabia. Your responses will remain anonymous and will be used solely for academic research purposes. Completing this survey will take approximately 5–7 minutes.&lt;br/&gt;&lt;br/&gt;Thank you for your valuable contribution."
-         data-ar="عزيزي المشارك،&lt;br/&gt;&lt;br/&gt;ندعوك للمشاركة في دراسة تستكشف أثر الفعاليات الرياضية على التنمية السياحية في المملكة العربية السعودية. ستبقى إجاباتك مجهولة الهوية وستُستخدم لأغراض البحث الأكاديمي فقط. يستغرق إكمال هذا الاستبيان حوالي 5-7 دقائق.&lt;br/&gt;&lt;br/&gt;شكراً لمساهمتك القيمة.">
-        Dear Participant,<br><br>You are invited to participate in a study exploring the impact of sports events on tourism development in Saudi Arabia. Your responses will remain anonymous and will be used solely for academic research purposes. Completing this survey will take approximately 5–7 minutes.<br><br>Thank you for your valuable contribution.
+         data-en="Dear Participant,&lt;br/&gt;&lt;br/&gt;You are invited to participate in a study evaluating the contribution of sports events to tourism growth in Saudi Arabia. Your responses will remain anonymous and will be used solely for academic research purposes. Completing this survey will take approximately 5–7 minutes.&lt;br/&gt;&lt;br/&gt;Thank you for your valuable contribution."
+         data-ar="عزيزي المشارك،&lt;br/&gt;&lt;br/&gt;ندعوك للمشاركة في دراسة تهدف إلى تقييم مساهمة الفعاليات الرياضية في نمو السياحة في المملكة العربية السعودية. ستبقى إجاباتك مجهولة الهوية وستُستخدم لأغراض البحث الأكاديمي فقط. يستغرق إكمال هذا الاستبيان حوالي 5-7 دقائق.&lt;br/&gt;&lt;br/&gt;شكراً لمساهمتك القيمة.">
+        Dear Participant,<br><br>You are invited to participate in a study evaluating the contribution of sports events to tourism growth in Saudi Arabia. Your responses will remain anonymous and will be used solely for academic research purposes. Completing this survey will take approximately 5–7 minutes.<br><br>Thank you for your valuable contribution.
       </p>
     </div>
 
     <form id="survey-form" novalidate>
 
+      <!-- SECTION A: SCREENING -->
       <div class="section-card fade-in">
-        <div class="section-badge" data-en="Section 1" data-ar="القسم 1">Section 1</div>
+        <div class="section-badge" data-en="Section A" data-ar="القسم أ">Section A</div>
         <h2 class="text-xl font-bold mb-1" style="color:#0a1f5c;"
-            data-en="Screening Questions" data-ar="أسئلة الفرز">Screening Questions</h2>
+            data-en="Screening Question" data-ar="سؤال الفرز">Screening Question</h2>
         <p class="text-sm text-gray-500 mb-5"
-           data-en="Please select the appropriate option to confirm your eligibility for this study." data-ar="يرجى اختيار الخيار المناسب لتأكيد أهليتك للمشاركة في هذه الدراسة.">Please select the appropriate option to confirm your eligibility for this study.</p>
+           data-en="Please select the appropriate option." data-ar="يرجى اختيار الخيار المناسب.">Please select the appropriate option.</p>
 
         <div class="mb-5" id="wrap-sc1">
           <p class="font-semibold text-gray-800 mb-2"
-             data-en="1. Have you attended at least one major sports event in Saudi Arabia within the last 12 months (e.g., Formula 1, Dakar Rally, football matches, etc.)?"
-             data-ar="1. هل حضرت على الأقل فعالية رياضية كبرى واحدة في المملكة العربية السعودية خلال الـ 12 شهراً الماضية (مثل فورمولا 1، رالي داكار، مباريات كرة القدم، إلخ)؟">
-            1. Have you attended at least one major sports event in Saudi Arabia within the last 12 months (e.g., Formula 1, Dakar Rally, football matches, etc.)?
+             data-en="1. Have you ever attended, followed, or been aware of major sports events held in Saudi Arabia?"
+             data-ar="1. هل سبق لك حضور أو متابعة أو الاطلاع على الفعاليات الرياضية الكبرى المقامة في المملكة العربية السعودية؟">
+            1. Have you ever attended, followed, or been aware of major sports events held in Saudi Arabia?
           </p>
           <label class="demo-option" onclick="selectScreen(this,'sc1','yes')">
             <input type="radio" name="sc1" value="yes">
@@ -352,7 +339,7 @@
           </label>
           <label class="demo-option" onclick="selectScreen(this,'sc1','no')">
             <input type="radio" name="sc1" value="no">
-            <span data-en="No (If no, please stop here)" data-ar="لا (شكراً لاهتمامك؛ أنت غير مؤهل لهذه الدراسة)">No (If no, please stop here)</span>
+            <span data-en="No (If No, please stop here)" data-ar="لا (إذا كانت الإجابة لا، يرجى التوقف هنا)">No (If No, please stop here)</span>
           </label>
           <div class="screening-stop" id="stop-sc1"
                data-en="⚠️ Thank you for your interest; you are not eligible for this study."
@@ -361,160 +348,86 @@
           </div>
           <p class="error-msg" id="err-sc1" data-en="Please select an option." data-ar="يرجى اختيار إجابة.">Please select an option.</p>
         </div>
-
-        <div class="mb-5" id="wrap-sc2">
-          <p class="font-semibold text-gray-800 mb-2"
-             data-en="2. Are you 18 years of age or older?"
-             data-ar="2. هل تبلغ من العمر 18 عاماً أو أكثر؟">
-            2. Are you 18 years of age or older?
-          </p>
-          <label class="demo-option" onclick="selectScreen(this,'sc2','yes')">
-            <input type="radio" name="sc2" value="yes">
-            <span data-en="Yes" data-ar="نعم">Yes</span>
-          </label>
-          <label class="demo-option" onclick="selectScreen(this,'sc2','no')">
-            <input type="radio" name="sc2" value="no">
-            <span data-en="No" data-ar="لا">No</span>
-          </label>
-          <div class="screening-stop" id="stop-sc2"
-               data-en="⚠️ Thank you for your interest; you are not eligible for this study."
-               data-ar="⚠️ شكراً لاهتمامك؛ أنت غير مؤهل لهذه الدراسة.">
-            ⚠️ Thank you for your interest; you are not eligible for this study.
-          </div>
-          <p class="error-msg" id="err-sc2" data-en="Please select an option." data-ar="يرجى اختيار إجابة.">Please select an option.</p>
-        </div>
-
-        <div class="mb-5" id="wrap-sc3">
-          <p class="font-semibold text-gray-800 mb-2"
-             data-en="3. Which of the following types of events did you most recently attend?"
-             data-ar="3. أي من أنواع الفعاليات التالية حضرتها مؤخراً؟">
-            3. Which of the following types of events did you most recently attend?
-          </p>
-          <label class="demo-option" onclick="selectDemo(this,'sc3')">
-            <input type="radio" name="sc3" value="Motorsport">
-            <span data-en="Motorsport (e.g., F1, Dakar Rally, Extreme E)" data-ar="رياضة المحركات (مثل فورمولا 1، رالي داكار، إكستريم إي)">Motorsport (e.g., F1, Dakar Rally, Extreme E)</span>
-          </label>
-          <label class="demo-option" onclick="selectDemo(this,'sc3')">
-            <input type="radio" name="sc3" value="Football">
-            <span data-en="Football (e.g., Saudi Pro League, International friendlies)" data-ar="كرة القدم (مثل الدوري السعودي للمحترفين، مباريات ودية دولية)">Football (e.g., Saudi Pro League, International friendlies)</span>
-          </label>
-          <label class="demo-option" onclick="selectDemo(this,'sc3')">
-            <input type="radio" name="sc3" value="Combat Sports">
-            <span data-en="Combat Sports (e.g., Boxing, WWE, UFC)" data-ar="الرياضات القتالية (مثل الملاكمة، WWE، UFC)">Combat Sports (e.g., Boxing, WWE, UFC)</span>
-          </label>
-          <label class="demo-option" onclick="selectDemo(this,'sc3')">
-            <input type="radio" name="sc3" value="Golf or Tennis">
-            <span data-en="Golf or Tennis (e.g., LIV Golf, Diriyah Cup)" data-ar="الجولف أو التنس (مثل ليف جولف، كأس الدرعية)">Golf or Tennis (e.g., LIV Golf, Diriyah Cup)</span>
-          </label>
-          <label class="demo-option" onclick="selectDemo(this,'sc3')">
-            <input type="radio" name="sc3" value="Other">
-            <span data-en="Other" data-ar="أخرى">Other</span>
-          </label>
-          <p class="error-msg" id="err-sc3" data-en="Please select an option." data-ar="يرجى اختيار إجابة.">Please select an option.</p>
-        </div>
       </div>
 
+      <!-- SECTION B: DEMOGRAPHICS -->
       <div class="section-card fade-in">
-        <div class="section-badge" data-en="Section 2" data-ar="القسم 2">Section 2</div>
+        <div class="section-badge" data-en="Section B" data-ar="القسم ب">Section B</div>
         <h2 class="text-xl font-bold mb-1" style="color:#0a1f5c;"
-            data-en="Demographic & Trip Information" data-ar="البيانات الديموغرافية ومعلومات الرحلة">Demographic & Trip Information</h2>
+            data-en="Demographic Information" data-ar="البيانات الشخصية">Demographic Information</h2>
         <p class="text-sm text-gray-500 mb-5"
            data-en="Please provide some information about yourself for statistical analysis."
            data-ar="يرجى تقديم بعض المعلومات عنك للتحليل الإحصائي.">
           Please provide some information about yourself for statistical analysis.
         </p>
 
+        <!-- Gender -->
         <div class="mb-5" id="wrap-d1">
-          <p class="font-semibold text-gray-800 mb-2" data-en="4. What is your age group?" data-ar="4. ما هي فئتك العمرية؟">4. What is your age group?</p>
-          <label class="demo-option" onclick="selectDemo(this,'d1')"><input type="radio" name="d1" value="18-25"> <span data-en="18–25" data-ar="18–25">18–25</span></label>
-          <label class="demo-option" onclick="selectDemo(this,'d1')"><input type="radio" name="d1" value="26-35"> <span data-en="26–35" data-ar="26–35">26–35</span></label>
-          <label class="demo-option" onclick="selectDemo(this,'d1')"><input type="radio" name="d1" value="36-45"> <span data-en="36–45" data-ar="36–45">36–45</span></label>
-          <label class="demo-option" onclick="selectDemo(this,'d1')"><input type="radio" name="d1" value="46-55"> <span data-en="46–55" data-ar="46–55">46–55</span></label>
-          <label class="demo-option" onclick="selectDemo(this,'d1')"><input type="radio" name="d1" value="56+"> <span data-en="56+" data-ar="أكثر من 56">56+</span></label>
+          <p class="font-semibold text-gray-800 mb-2" data-en="2. Gender" data-ar="2. الجنس">2. Gender</p>
+          <label class="demo-option" onclick="selectDemo(this,'d1')"><input type="radio" name="d1" value="Male"> <span data-en="Male" data-ar="ذكر">Male</span></label>
+          <label class="demo-option" onclick="selectDemo(this,'d1')"><input type="radio" name="d1" value="Female"> <span data-en="Female" data-ar="أنثى">Female</span></label>
+          <label class="demo-option" onclick="selectDemo(this,'d1')"><input type="radio" name="d1" value="Prefer not to say"> <span data-en="Prefer not to say" data-ar="أفضل عدم الإفصاح">Prefer not to say</span></label>
           <p class="error-msg" id="err-d1" data-en="Please select an option." data-ar="يرجى اختيار إجابة.">Please select an option.</p>
         </div>
 
+        <!-- Age -->
         <div class="mb-5" id="wrap-d2">
-          <p class="font-semibold text-gray-800 mb-2" data-en="5. What is your gender?" data-ar="5. ما هو جنسك؟">5. What is your gender?</p>
-          <label class="demo-option" onclick="selectDemo(this,'d2')"><input type="radio" name="d2" value="Male"> <span data-en="Male" data-ar="ذكر">Male</span></label>
-          <label class="demo-option" onclick="selectDemo(this,'d2')"><input type="radio" name="d2" value="Female"> <span data-en="Female" data-ar="أنثى">Female</span></label>
+          <p class="font-semibold text-gray-800 mb-2" data-en="3. Age" data-ar="3. العمر">3. Age</p>
+          <label class="demo-option" onclick="selectDemo(this,'d2')"><input type="radio" name="d2" value="Less than 20"> <span data-en="Less than 20" data-ar="أقل من 20">Less than 20</span></label>
+          <label class="demo-option" onclick="selectDemo(this,'d2')"><input type="radio" name="d2" value="20-29"> <span data-en="20–29" data-ar="20–29">20–29</span></label>
+          <label class="demo-option" onclick="selectDemo(this,'d2')"><input type="radio" name="d2" value="30-39"> <span data-en="30–39" data-ar="30–39">30–39</span></label>
+          <label class="demo-option" onclick="selectDemo(this,'d2')"><input type="radio" name="d2" value="40-49"> <span data-en="40–49" data-ar="40–49">40–49</span></label>
+          <label class="demo-option" onclick="selectDemo(this,'d2')"><input type="radio" name="d2" value="50+"> <span data-en="50 and above" data-ar="50 فأكثر">50 and above</span></label>
           <p class="error-msg" id="err-d2" data-en="Please select an option." data-ar="يرجى اختيار إجابة.">Please select an option.</p>
         </div>
 
+        <!-- Nationality -->
         <div class="mb-5" id="wrap-d3">
-          <p class="font-semibold text-gray-800 mb-2" data-en="6. What is your nationality?" data-ar="6. ما هي جنسيتك؟">6. What is your nationality?</p>
-          <label class="demo-option" onclick="selectDemo(this,'d3')"><input type="radio" name="d3" value="Saudi National"> <span data-en="Saudi National" data-ar="مواطن سعودي">Saudi National</span></label>
-          <label class="demo-option" onclick="selectDemo(this,'d3')"><input type="radio" name="d3" value="Non-Saudi Resident"> <span data-en="Non-Saudi Resident" data-ar="مقيم غير سعودي">Non-Saudi Resident</span></label>
-          <label class="demo-option" onclick="selectDemo(this,'d3')"><input type="radio" name="d3" value="International Tourist"> <span data-en="International Tourist" data-ar="سائح دولي">International Tourist</span></label>
+          <p class="font-semibold text-gray-800 mb-2" data-en="4. Nationality" data-ar="4. الجنسية">4. Nationality</p>
+          <label class="demo-option" onclick="selectDemo(this,'d3')"><input type="radio" name="d3" value="Saudi"> <span data-en="Saudi" data-ar="سعودي">Saudi</span></label>
+          <label class="demo-option" onclick="selectDemo(this,'d3')"><input type="radio" name="d3" value="Non-Saudi"> <span data-en="Non-Saudi" data-ar="غير سعودي">Non-Saudi</span></label>
           <p class="error-msg" id="err-d3" data-en="Please select an option." data-ar="يرجى اختيار إجابة.">Please select an option.</p>
         </div>
 
+        <!-- Education -->
         <div class="mb-5" id="wrap-d4">
-          <p class="font-semibold text-gray-800 mb-2" data-en="7. Was this your first time attending a major sports event in Saudi Arabia?" data-ar="7. هل كانت هذه المرة الأولى التي تحضر فيها فعالية رياضية كبرى في السعودية؟">7. Was this your first time attending a major sports event in Saudi Arabia?</p>
-          <label class="demo-option" onclick="selectDemo(this,'d4')"><input type="radio" name="d4" value="Yes"> <span data-en="Yes, first time" data-ar="نعم، أول مرة">Yes, first time</span></label>
-          <label class="demo-option" onclick="selectDemo(this,'d4')"><input type="radio" name="d4" value="No"> <span data-en="No, I have attended multiple events" data-ar="لا، حضرت عدة فعاليات">No, I have attended multiple events</span></label>
+          <p class="font-semibold text-gray-800 mb-2" data-en="5. Educational Level" data-ar="5. المستوى التعليمي">5. Educational Level</p>
+          <label class="demo-option" onclick="selectDemo(this,'d4')"><input type="radio" name="d4" value="High school or below"> <span data-en="High school or below" data-ar="ثانوية عامة أو أقل">High school or below</span></label>
+          <label class="demo-option" onclick="selectDemo(this,'d4')"><input type="radio" name="d4" value="Diploma"> <span data-en="Diploma" data-ar="دبلوم">Diploma</span></label>
+          <label class="demo-option" onclick="selectDemo(this,'d4')"><input type="radio" name="d4" value="Bachelor's degree"> <span data-en="Bachelor's degree" data-ar="بكالوريوس">Bachelor's degree</span></label>
+          <label class="demo-option" onclick="selectDemo(this,'d4')"><input type="radio" name="d4" value="Master's degree"> <span data-en="Master's degree" data-ar="ماجستير">Master's degree</span></label>
+          <label class="demo-option" onclick="selectDemo(this,'d4')"><input type="radio" name="d4" value="Doctorate"> <span data-en="Doctorate" data-ar="دكتوراه">Doctorate</span></label>
           <p class="error-msg" id="err-d4" data-en="Please select an option." data-ar="يرجى اختيار إجابة.">Please select an option.</p>
+        </div>
+
+        <!-- Frequency -->
+        <div class="mb-5" id="wrap-d5">
+          <p class="font-semibold text-gray-800 mb-2" data-en="6. Frequency of attending or following sports events" data-ar="6. تكرار حضور أو متابعة الفعاليات الرياضية">6. Frequency of attending or following sports events</p>
+          <label class="demo-option" onclick="selectDemo(this,'d5')"><input type="radio" name="d5" value="Rarely"> <span data-en="Rarely" data-ar="نادراً">Rarely</span></label>
+          <label class="demo-option" onclick="selectDemo(this,'d5')"><input type="radio" name="d5" value="Occasionally"> <span data-en="Occasionally" data-ar="أحياناً">Occasionally</span></label>
+          <label class="demo-option" onclick="selectDemo(this,'d5')"><input type="radio" name="d5" value="Sometimes"> <span data-en="Sometimes" data-ar="في بعض الأحيان">Sometimes</span></label>
+          <label class="demo-option" onclick="selectDemo(this,'d5')"><input type="radio" name="d5" value="Often"> <span data-en="Often" data-ar="كثيراً">Often</span></label>
+          <label class="demo-option" onclick="selectDemo(this,'d5')"><input type="radio" name="d5" value="Very often"> <span data-en="Very often" data-ar="كثيراً جداً">Very often</span></label>
+          <p class="error-msg" id="err-d5" data-en="Please select an option." data-ar="يرجى اختيار إجابة.">Please select an option.</p>
         </div>
       </div>
 
+      <!-- SECTION C: STUDY VARIABLES -->
       <div class="section-card fade-in">
-        <div class="section-badge" data-en="Section 3" data-ar="القسم 3">Section 3</div>
+        <div class="section-badge" data-en="Section C" data-ar="القسم ج">Section C</div>
         <h2 class="text-xl font-bold mb-1" style="color:#0a1f5c;"
-            data-en="Sports Event Quality & Experience" data-ar="جودة الفعالية الرياضية والتجربة">Sports Event Quality & Experience</h2>
+            data-en="Study Variables" data-ar="متغيرات الدراسة">Study Variables</h2>
         <p class="text-sm text-gray-500 mb-5"
-           data-en="Please indicate your level of agreement with the following statements regarding the most recent sports event you attended in Saudi Arabia (1 = Strongly Disagree, 5 = Strongly Agree)."
-           data-ar="يرجى تحديد مستوى موافقتك على العبارات التالية بخصوص أحدث فعالية رياضية حضرتها في السعودية (1 = أختلف بشدة، 5 = أوافق بشدة).">
-          Please indicate your level of agreement with the following statements regarding the most recent sports event you attended in Saudi Arabia (1 = Strongly Disagree, 5 = Strongly Agree).
+           data-en="Please indicate your level of agreement with the following statements (1 = Strongly Disagree, 5 = Strongly Agree)."
+           data-ar="يرجى تحديد مستوى موافقتك على العبارات التالية (1 = أختلف بشدة، 5 = أوافق بشدة).">
+          Please indicate your level of agreement with the following statements (1 = Strongly Disagree, 5 = Strongly Agree).
         </p>
-        <div id="eq-questions"></div>
-      </div>
 
-      <div class="section-card fade-in">
-        <div class="section-badge" data-en="Section 4" data-ar="القسم 4">Section 4</div>
-        <h2 class="text-xl font-bold mb-1" style="color:#0a1f5c;"
-            data-en="Destination Image" data-ar="صورة الوجهة">Destination Image</h2>
-        <p class="text-sm text-gray-500 mb-5"
-           data-en="Please indicate your level of agreement regarding your perception of Saudi Arabia as a destination (1 = Strongly Disagree, 5 = Strongly Agree)."
-           data-ar="يرجى تحديد مستوى موافقتك حول تصورك للمملكة العربية السعودية كوجهة (1 = أختلف بشدة، 5 = أوافق بشدة).">
-          Please indicate your level of agreement regarding your perception of Saudi Arabia as a destination (1 = Strongly Disagree, 5 = Strongly Agree).
-        </p>
-        <div id="di-questions"></div>
-      </div>
+        <h3 style="color:#0a1f5c;font-weight:700;margin-bottom:1rem;font-size:1rem;" data-en="Sports Events" data-ar="الفعاليات الرياضية">Sports Events</h3>
+        <div id="se-questions"></div>
 
-      <div class="section-card fade-in">
-        <div class="section-badge" data-en="Section 5" data-ar="القسم 5">Section 5</div>
-        <h2 class="text-xl font-bold mb-1" style="color:#0a1f5c;"
-            data-en="Visitor Satisfaction" data-ar="رضا الزوار">Visitor Satisfaction</h2>
-        <p class="text-sm text-gray-500 mb-5"
-           data-en="Please indicate your level of agreement regarding your overall experience (1 = Strongly Disagree, 5 = Strongly Agree)."
-           data-ar="يرجى تحديد مستوى موافقتك حول تجربتك بشكل عام (1 = أختلف بشدة، 5 = أوافق بشدة).">
-          Please indicate your level of agreement regarding your overall experience (1 = Strongly Disagree, 5 = Strongly Agree).
-        </p>
-        <div id="vs-questions"></div>
-      </div>
-
-      <div class="section-card fade-in">
-        <div class="section-badge" data-en="Section 6" data-ar="القسم 6">Section 6</div>
-        <h2 class="text-xl font-bold mb-1" style="color:#0a1f5c;"
-            data-en="Behavioral Intentions" data-ar="النوايا السلوكية">Behavioral Intentions</h2>
-        <p class="text-sm text-gray-500 mb-5"
-           data-en="Please indicate your level of agreement regarding your future plans (1 = Strongly Disagree, 5 = Strongly Agree)."
-           data-ar="يرجى تحديد مستوى موافقتك حول خططك المستقبلية (1 = أختلف بشدة، 5 = أوافق بشدة).">
-          Please indicate your level of agreement regarding your future plans (1 = Strongly Disagree, 5 = Strongly Agree).
-        </p>
-        <div id="bi-questions"></div>
-      </div>
-
-      <div class="section-card fade-in">
-        <div class="section-badge" data-en="Section 7" data-ar="القسم 7">Section 7</div>
-        <h2 class="text-xl font-bold mb-1" style="color:#0a1f5c;"
-            data-en="Tourism Development Perceptions" data-ar="تصورات التنمية السياحية">Tourism Development Perceptions</h2>
-        <p class="text-sm text-gray-500 mb-5"
-           data-en="Please indicate your level of agreement regarding the impact of sports events on tourism (1 = Strongly Disagree, 5 = Strongly Agree)."
-           data-ar="يرجى تحديد مستوى موافقتك حول تأثير الفعاليات الرياضية على السياحة (1 = أختلف بشدة، 5 = أوافق بشدة).">
-          Please indicate your level of agreement regarding the impact of sports events on tourism (1 = Strongly Disagree, 5 = Strongly Agree).
-        </p>
-        <div id="td-questions"></div>
+        <h3 style="color:#0a1f5c;font-weight:700;margin:1.5rem 0 1rem;font-size:1rem;" data-en="Tourism Growth" data-ar="النمو السياحي">Tourism Growth</h3>
+        <div id="tg-questions"></div>
       </div>
 
       <div class="text-center mb-10">
@@ -548,33 +461,24 @@
 
 <script>
 // ─── DATA ────────────────────────────────────────────────────────────────────
-const EQ_QUESTIONS = [
-  { id:'sq1', num:8, en:'The event was professionally managed and organized.', ar:'كانت الفعالية تدار وتنظم باحترافية.' },
-  { id:'sq2', num:9, en:'I felt safe and secure throughout the duration of the event.', ar:'شعرت بالأمان والسلامة طوال فترة الفعالية.' },
-  { id:'sq3', num:10, en:'The venue\'s facilities and infrastructure (e.g., seating, signage) were of high quality.', ar:'كانت مرافق الموقع والبنية التحتية (مثل المقاعد، اللوحات الإرشادية) ذات جودة عالية.' },
-  { id:'sq4', num:11, en:'The event atmosphere was vibrant and highly enjoyable.', ar:'كان جو الفعالية نابضاً بالحياة وممتعاً للغاية.' },
-  { id:'sq5', num:12, en:'Essential information and assistance were easily accessible during the event.', ar:'كان من السهل الوصول إلى المعلومات الأساسية والمساعدة أثناء الفعالية.' },
-  { id:'sq6', num:13, en:'The overall management of the event met high international standards.', ar:'الإدارة العامة للفعالية لبت المعايير الدولية العالية.' },
+const SE_QUESTIONS = [
+  { id:'se1', num:7,  en:'Sports events in Saudi Arabia attract a large number of visitors.', ar:'الفعاليات الرياضية في السعودية تستقطب عدداً كبيراً من الزوار.' },
+  { id:'se2', num:8,  en:'Sports events increase the visibility of Saudi Arabia as a tourist destination.', ar:'الفعاليات الرياضية تزيد من ظهور السعودية كوجهة سياحية.' },
+  { id:'se3', num:9,  en:'Sports events contribute to improving the image of Saudi Arabia internationally.', ar:'الفعاليات الرياضية تسهم في تحسين صورة السعودية دولياً.' },
+  { id:'se4', num:10, en:'Hosting sports events enhances the overall attractiveness of tourist destinations.', ar:'استضافة الفعاليات الرياضية تعزز جاذبية الوجهات السياحية بشكل عام.' },
+  { id:'se5', num:11, en:'Sports events encourage both domestic and international travel.', ar:'الفعاليات الرياضية تشجع السفر المحلي والدولي.' },
+  { id:'se6', num:12, en:'Sports events lead to increased demand for hospitality services (hotels, restaurants, etc.).', ar:'الفعاليات الرياضية تؤدي إلى زيادة الطلب على خدمات الضيافة (فنادق، مطاعم، إلخ).' },
+  { id:'se7', num:13, en:'Sports events contribute to infrastructure and service development.', ar:'الفعاليات الرياضية تسهم في تطوير البنية التحتية والخدمات.' },
+  { id:'se8', num:14, en:'Sports events are well-organized and professionally managed in Saudi Arabia.', ar:'الفعاليات الرياضية في السعودية منظمة وتُدار باحترافية.' },
 ];
-const DI_QUESTIONS = [
-  { id:'di1', num:14, en:'Saudi Arabia is a modern and attractive destination for international tourists.', ar:'المملكة العربية السعودية وجهة حديثة وجذابة للسياح الدوليين.' },
-  { id:'di2', num:15, en:'Hosting major sports events has significantly improved my perception of Saudi Arabia.', ar:'استضافة الفعاليات الرياضية الكبرى حسّن بشكل كبير من نظرتي للمملكة.' },
-  { id:'di3', num:16, en:'I view Saudi Arabia as a dynamic country with a rich variety of tourism offerings.', ar:'أرى السعودية كدولة ديناميكية تتمتع بتنوع غني في العروض السياحية.' },
-];
-const VS_QUESTIONS = [
-  { id:'vs1', num:17, en:'Overall, I am very satisfied with my decision to attend the sports event.', ar:'بشكل عام، أنا راضٍ جداً عن قراري بحضور الفعالية الرياضية.' },
-  { id:'vs2', num:18, en:'My experience at the event was much better than I had expected.', ar:'كانت تجربتي في الفعالية أفضل بكثير مما توقعت.' },
-  { id:'vs3', num:19, en:'I am pleased with the quality of the tourism experience during my stay.', ar:'أنا سعيد بجودة التجربة السياحية خلال فترة إقامتي.' },
-];
-const BI_QUESTIONS = [
-  { id:'bi1', num:20, en:'I intend to attend another sports event in Saudi Arabia in the future.', ar:'أنوي حضور فعالية رياضية أخرى في السعودية مستقبلاً.' },
-  { id:'bi2', num:21, en:'I would like to visit Saudi Arabia again for general tourism purposes.', ar:'أود زيارة السعودية مرة أخرى لأغراض السياحة العامة.' },
-  { id:'bi3', num:22, en:'I will highly recommend Saudi Arabia as a sports tourism destination to others.', ar:'سأوصي بشدة بالسعودية كوجهة للسياحة الرياضية للآخرين.' },
-];
-const TD_QUESTIONS = [
-  { id:'td1', num:23, en:'Hosting sports events encourages me to stay longer in Saudi Arabia than I initially planned.', ar:'استضافة الفعاليات الرياضية يشجعني على البقاء في السعودية لفترة أطول مما خططت له.' },
-  { id:'td2', num:24, en:'I am willing to spend more on local tourism services (hotels, dining) due to the event\'s quality.', ar:'أنا مستعد لإنفاق المزيد على الخدمات السياحية المحلية (فنادق، مطاعم) بسبب جودة الفعالية.' },
-  { id:'td3', num:25, en:'Sports events significantly enhance the overall tourism appeal of Saudi Arabia.', ar:'الفعاليات الرياضية تعزز بشكل كبير الجاذبية السياحية العامة للسعودية.' },
+const TG_QUESTIONS = [
+  { id:'tg1', num:15, en:'Sports events contribute to an increase in tourist arrivals in Saudi Arabia.', ar:'الفعاليات الرياضية تسهم في زيادة الوافدين السياحيين إلى السعودية.' },
+  { id:'tg2', num:16, en:'Sports events lead to higher tourism revenues.', ar:'الفعاليات الرياضية تؤدي إلى زيادة الإيرادات السياحية.' },
+  { id:'tg3', num:17, en:'Sports events increase hotel occupancy rates.', ar:'الفعاليات الرياضية ترفع معدلات إشغال الفنادق.' },
+  { id:'tg4', num:18, en:'Sports events extend tourists\' length of stay.', ar:'الفعاليات الرياضية تمدد مدة إقامة السياح.' },
+  { id:'tg5', num:19, en:'Sports events contribute to the overall growth of the tourism sector.', ar:'الفعاليات الرياضية تسهم في النمو الشامل للقطاع السياحي.' },
+  { id:'tg6', num:20, en:'Sports events enhance the competitiveness of Saudi Arabia as a tourism destination.', ar:'الفعاليات الرياضية تعزز تنافسية السعودية كوجهة سياحية.' },
+  { id:'tg7', num:21, en:'Sports events support sustainable tourism development in Saudi Arabia.', ar:'الفعاليات الرياضية تدعم التنمية السياحية المستدامة في السعودية.' },
 ];
 
 const LIKERT_LABELS = {
@@ -582,17 +486,15 @@ const LIKERT_LABELS = {
   ar: ['أختلف بشدة','أختلف','محايد','أوافق','أوافق بشدة']
 };
 
-// ─── STATE ───────────────────────────────────────────────────────────────────
 let currentLang = 'en';
 const responses = {};
 
-// ─── BUILD LIKERT QUESTIONS ──────────────────────────────────────────────────
 function buildLikertBlock(q) {
   let btns = '';
   for (let v = 1; v <= 5; v++) {
     const sel = responses[q.id] == v ? ' selected' : '';
     btns += `<button type="button" class="likert-btn${sel}" data-qid="${q.id}" data-val="${v}" onclick="selectLikert(this,'${q.id}',${v})">
-      <span class="block text-base font-bold">${v}</span>
+      <span class="block" style="font-size:1rem;font-weight:700;">${v}</span>
       <span class="block text-xs leading-snug" data-en="${LIKERT_LABELS.en[v-1]}" data-ar="${LIKERT_LABELS.ar[v-1]}">${LIKERT_LABELS[currentLang][v-1]}</span>
     </button>`;
   }
@@ -604,14 +506,10 @@ function buildLikertBlock(q) {
 }
 
 function buildAll() {
-  document.getElementById('eq-questions').innerHTML = EQ_QUESTIONS.map(buildLikertBlock).join('');
-  document.getElementById('di-questions').innerHTML = DI_QUESTIONS.map(buildLikertBlock).join('');
-  document.getElementById('vs-questions').innerHTML = VS_QUESTIONS.map(buildLikertBlock).join('');
-  document.getElementById('bi-questions').innerHTML = BI_QUESTIONS.map(buildLikertBlock).join('');
-  document.getElementById('td-questions').innerHTML = TD_QUESTIONS.map(buildLikertBlock).join('');
+  document.getElementById('se-questions').innerHTML = SE_QUESTIONS.map(buildLikertBlock).join('');
+  document.getElementById('tg-questions').innerHTML = TG_QUESTIONS.map(buildLikertBlock).join('');
 }
 
-// ─── INTERACTIONS ────────────────────────────────────────────────────────────
 function selectLikert(btn, qid, val) {
   document.querySelectorAll(`.likert-btn[data-qid="${qid}"]`).forEach(b => b.classList.remove('selected'));
   btn.classList.add('selected');
@@ -622,9 +520,7 @@ function selectLikert(btn, qid, val) {
 }
 
 function selectDemo(label, name) {
-  document.querySelectorAll(`input[name="${name}"]`).forEach(r => {
-    r.closest('.demo-option').classList.remove('selected');
-  });
+  document.querySelectorAll(`input[name="${name}"]`).forEach(r => r.closest('.demo-option').classList.remove('selected'));
   label.classList.add('selected');
   const radio = label.querySelector('input');
   if (radio) { radio.checked = true; responses[name] = radio.value; }
@@ -634,9 +530,7 @@ function selectDemo(label, name) {
 }
 
 function selectScreen(label, name, val) {
-  document.querySelectorAll(`input[name="${name}"]`).forEach(r => {
-    r.closest('.demo-option').classList.remove('selected');
-  });
+  document.querySelectorAll(`input[name="${name}"]`).forEach(r => r.closest('.demo-option').classList.remove('selected'));
   label.classList.add('selected');
   const radio = label.querySelector('input');
   if (radio) radio.checked = true;
@@ -648,21 +542,20 @@ function selectScreen(label, name, val) {
   updateProgress();
 }
 
+function getAllKeys() {
+  return ['sc1','d1','d2','d3','d4','d5',
+    ...SE_QUESTIONS.map(q=>q.id),
+    ...TG_QUESTIONS.map(q=>q.id)];
+}
+
 function updateProgress() {
-  let filled = 0;
-  const allKeys = ['sc1','sc2','sc3','d1','d2','d3','d4',
-    ...EQ_QUESTIONS.map(q=>q.id),
-    ...DI_QUESTIONS.map(q=>q.id),
-    ...VS_QUESTIONS.map(q=>q.id),
-    ...BI_QUESTIONS.map(q=>q.id),
-    ...TD_QUESTIONS.map(q=>q.id)];
-  allKeys.forEach(k => { if (responses[k]) filled++; });
+  const allKeys = getAllKeys();
+  const filled = allKeys.filter(k => responses[k]).length;
   const pct = Math.round((filled / allKeys.length) * 100);
   document.getElementById('progress-bar').style.width = pct + '%';
   document.getElementById('progress-pct').textContent = pct + '%';
 }
 
-// ─── LANGUAGE TOGGLE ────────────────────────────────────────────────────────
 function toggleLang() {
   currentLang = currentLang === 'en' ? 'ar' : 'en';
   const html = document.getElementById('html-root');
@@ -672,9 +565,8 @@ function toggleLang() {
   document.querySelectorAll('[data-en]').forEach(el => {
     const txt = el.getAttribute('data-' + currentLang);
     if (txt) {
-      if (el.tagName === 'P' || el.tagName === 'H1' || el.tagName === 'H2' || el.tagName === 'SPAN' || el.tagName === 'BUTTON' || el.tagName === 'DIV') {
-        if (txt.includes('<br')) el.innerHTML = txt;
-        else el.textContent = txt;
+      if (['P','H1','H2','H3','SPAN','BUTTON','DIV'].includes(el.tagName)) {
+        if (txt.includes('<br')) el.innerHTML = txt; else el.textContent = txt;
       }
     }
   });
@@ -682,20 +574,13 @@ function toggleLang() {
   updateProgress();
 }
 
-// ─── SUBMIT ─────────────────────────────────────────────────────────────────
 function submitSurvey() {
-  if (responses.sc1 === 'no' || responses.sc2 === 'no') {
-    alert(currentLang === 'ar' ? 'عذراً، لا تستطيع المتابعة بناءً على إجاباتك على أسئلة الفرز.' : 'Sorry, you are not eligible to continue based on your screening answers.');
+  if (responses.sc1 === 'no') {
+    alert(currentLang === 'ar' ? 'عذراً، أنت غير مؤهل لهذه الدراسة.' : 'Sorry, you are not eligible for this study.');
     return;
   }
   let valid = true;
-  const allKeys = ['sc1','sc2','sc3','d1','d2','d3','d4',
-    ...EQ_QUESTIONS.map(q=>q.id),
-    ...DI_QUESTIONS.map(q=>q.id),
-    ...VS_QUESTIONS.map(q=>q.id),
-    ...BI_QUESTIONS.map(q=>q.id),
-    ...TD_QUESTIONS.map(q=>q.id)];
-  allKeys.forEach(k => {
+  getAllKeys().forEach(k => {
     if (!responses[k]) {
       const err = document.getElementById('err-' + k);
       if (err) err.classList.add('show');
@@ -710,24 +595,20 @@ function submitSurvey() {
   saveResponse();
   updateCounterBadge();
   document.getElementById('survey-form').style.display = 'none';
-  const ty = document.getElementById('thank-you');
-  ty.style.display = 'flex';
+  document.getElementById('thank-you').style.display = 'flex';
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// ─── STORAGE ─────────────────────────────────────────────────────────────────
 function saveResponse() {
   const all = loadResponses();
-  const entry = { timestamp: new Date().toLocaleString(), ...responses };
-  all.push(entry);
-  localStorage.setItem('sports_tourism_responses', JSON.stringify(all));
+  all.push({ timestamp: new Date().toLocaleString(), ...responses });
+  localStorage.setItem('sports_tourism_v2_responses', JSON.stringify(all));
 }
 function loadResponses() {
-  try { return JSON.parse(localStorage.getItem('sports_tourism_responses') || '[]'); } catch { return []; }
+  try { return JSON.parse(localStorage.getItem('sports_tourism_v2_responses') || '[]'); } catch { return []; }
 }
-function clearAllResponses() { localStorage.removeItem('sports_tourism_responses'); }
+function clearAllResponses() { localStorage.removeItem('sports_tourism_v2_responses'); }
 
-// ─── RESET ───────────────────────────────────────────────────────────────────
 function resetForm() {
   Object.keys(responses).forEach(k => delete responses[k]);
   document.querySelectorAll('.demo-option').forEach(l => l.classList.remove('selected'));
@@ -740,66 +621,54 @@ function resetForm() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// ─── COUNTER ─────────────────────────────────────────────────────────────────
 function updateCounterBadge() {
   document.getElementById('response-count-badge').textContent = loadResponses().length;
 }
 
-// ─── DASHBOARD ───────────────────────────────────────────────────────────────
 function openDashboard() {
   const all = loadResponses();
   document.getElementById('dash-count').textContent = all.length;
   if (all.length > 0) {
-    const ages = {}, genders = {};
+    const genders = {}, ages = {};
     all.forEach(r => {
-      ages[r.d1] = (ages[r.d1] || 0) + 1;
-      genders[r.d2] = (genders[r.d2] || 0) + 1;
+      genders[r.d1] = (genders[r.d1]||0)+1;
+      ages[r.d2] = (ages[r.d2]||0)+1;
     });
     const top = obj => Object.entries(obj).sort((a,b)=>b[1]-a[1])[0];
     const mean = keys => {
-      const vals = all.flatMap(r => keys.map(k => Number(r[k]))).filter(v => v > 0);
-      return vals.length ? (vals.reduce((a,b)=>a+b,0)/vals.length).toFixed(2) : 'N/A';
+      const vals = all.flatMap(r=>keys.map(k=>Number(r[k]))).filter(v=>v>0);
+      return vals.length?(vals.reduce((a,b)=>a+b,0)/vals.length).toFixed(2):'N/A';
     };
-    
-    const eqAvg = mean(EQ_QUESTIONS.map(q=>q.id));
-    const vsAvg = mean(VS_QUESTIONS.map(q=>q.id));
-    const tdAvg = mean(TD_QUESTIONS.map(q=>q.id));
-    
-    const ta = top(ages), tg = top(genders);
+    const seAvg = mean(SE_QUESTIONS.map(q=>q.id));
+    const tgAvg = mean(TG_QUESTIONS.map(q=>q.id));
+    const tg = top(genders), ta = top(ages);
     document.getElementById('stats-grid').innerHTML = `
       <div style="background:#eff6ff;border-radius:0.5rem;padding:0.75rem;text-align:center;">
-        <p style="font-size:0.75rem;color:#6b7280;">Top Age Group</p>
-        <p style="font-weight:700;color:#0a1f5c;">${ta ? ta[0]+' ('+ta[1]+')' : '—'}</p>
+        <p style="font-size:0.75rem;color:#6b7280;">Top Gender</p>
+        <p style="font-weight:700;color:#0a1f5c;">${tg?tg[0]+' ('+tg[1]+')':'—'}</p>
       </div>
       <div style="background:#eff6ff;border-radius:0.5rem;padding:0.75rem;text-align:center;">
-        <p style="font-size:0.75rem;color:#6b7280;">Top Gender</p>
-        <p style="font-weight:700;color:#0a1f5c;">${tg ? tg[0]+' ('+tg[1]+')' : '—'}</p>
+        <p style="font-size:0.75rem;color:#6b7280;">Top Age Group</p>
+        <p style="font-weight:700;color:#0a1f5c;">${ta?ta[0]+' ('+ta[1]+')':'—'}</p>
       </div>
       <div style="background:#e0f2fe;border-radius:0.5rem;padding:0.75rem;text-align:center;">
-        <p style="font-size:0.75rem;color:#6b7280;">Avg. Event Quality</p>
-        <p style="font-weight:700;color:#0369a1;">${eqAvg} / 5</p>
+        <p style="font-size:0.75rem;color:#6b7280;">Avg. Sports Events</p>
+        <p style="font-weight:700;color:#0369a1;">${seAvg} / 5</p>
       </div>
       <div style="background:#e0f2fe;border-radius:0.5rem;padding:0.75rem;text-align:center;">
-        <p style="font-size:0.75rem;color:#6b7280;">Avg. Satisfaction</p>
-        <p style="font-weight:700;color:#0369a1;">${vsAvg} / 5</p>
-      </div>
-      <div style="background:#eff6ff;border-radius:0.5rem;padding:0.75rem;text-align:center;grid-column:span 2;">
-        <p style="font-size:0.75rem;color:#6b7280;">Avg. Tourism Dev. Perceptions</p>
-        <p style="font-weight:700;color:#0a1f5c;">${tdAvg} / 5</p>
+        <p style="font-size:0.75rem;color:#6b7280;">Avg. Tourism Growth</p>
+        <p style="font-weight:700;color:#0369a1;">${tgAvg} / 5</p>
       </div>`;
     const recent = all.slice(-5).reverse();
     document.getElementById('recent-responses').innerHTML = `
       <p style="font-size:0.875rem;font-weight:600;color:#374151;margin-bottom:0.5rem;">Recent Responses (last ${recent.length}):</p>
-      <div style="overflow-x:auto">
-      <table class="resp-table">
-        <thead><tr><th>#</th><th>Time</th><th>Age</th><th>Gender</th><th>EQ Avg</th></tr></thead>
-        <tbody>
-          ${recent.map((r,i) => {
-            const vals = EQ_QUESTIONS.map(q=>Number(r[q.id])).filter(v=>v>0);
-            const avg = vals.length ? (vals.reduce((a,b)=>a+b,0)/vals.length).toFixed(1) : '—';
-            return `<tr><td>${all.length-i}</td><td>${r.timestamp}</td><td>${r.d1||'—'}</td><td>${r.d2||'—'}</td><td>${avg}</td></tr>`;
-          }).join('')}
-        </tbody>
+      <div style="overflow-x:auto"><table class="resp-table">
+        <thead><tr><th>#</th><th>Time</th><th>Gender</th><th>Age</th><th>SE Avg</th></tr></thead>
+        <tbody>${recent.map((r,i)=>{
+          const vals=SE_QUESTIONS.map(q=>Number(r[q.id])).filter(v=>v>0);
+          const avg=vals.length?(vals.reduce((a,b)=>a+b,0)/vals.length).toFixed(1):'—';
+          return `<tr><td>${all.length-i}</td><td>${r.timestamp}</td><td>${r.d1||'—'}</td><td>${r.d2||'—'}</td><td>${avg}</td></tr>`;
+        }).join('')}</tbody>
       </table></div>`;
   } else {
     document.getElementById('stats-grid').innerHTML = '<p style="font-size:0.875rem;color:#9ca3af;grid-column:span 2;">No responses yet.</p>';
@@ -808,55 +677,38 @@ function openDashboard() {
   document.getElementById('dashboard').classList.add('open');
 }
 function closeDashboard() { document.getElementById('dashboard').classList.remove('open'); }
-document.getElementById('dashboard').addEventListener('click', function(e) { if (e.target === this) closeDashboard(); });
+document.getElementById('dashboard').addEventListener('click', function(e){ if(e.target===this) closeDashboard(); });
 
-// ─── EXPORT ──────────────────────────────────────────────────────────────────
 function exportToExcel() {
   const all = loadResponses();
   if (!all.length) { alert('No responses to export yet.'); return; }
-  const headers = ['Timestamp','Age Group','Gender','Nationality','First Time','Event Type',
-    ...EQ_QUESTIONS.map((q,i)=>`Q${q.num}`),
-    ...DI_QUESTIONS.map((q,i)=>`Q${q.num}`),
-    ...VS_QUESTIONS.map((q,i)=>`Q${q.num}`),
-    ...BI_QUESTIONS.map((q,i)=>`Q${q.num}`),
-    ...TD_QUESTIONS.map((q,i)=>`Q${q.num}`)];
-  const rows = all.map(r => [
-    r.timestamp, r.d1, r.d2, r.d3, r.d4, r.sc3,
-    ...EQ_QUESTIONS.map(q=>r[q.id]||''),
-    ...DI_QUESTIONS.map(q=>r[q.id]||''),
-    ...VS_QUESTIONS.map(q=>r[q.id]||''),
-    ...BI_QUESTIONS.map(q=>r[q.id]||''),
-    ...TD_QUESTIONS.map(q=>r[q.id]||''),
+  const headers = ['Timestamp','Gender','Age','Nationality','Education','Frequency',
+    ...SE_QUESTIONS.map(q=>`SE${q.id.replace('se','')}`),
+    ...TG_QUESTIONS.map(q=>`TG${q.id.replace('tg','')}`)];
+  const rows = all.map(r=>[
+    r.timestamp,r.d1,r.d2,r.d3,r.d4,r.d5,
+    ...SE_QUESTIONS.map(q=>r[q.id]||''),
+    ...TG_QUESTIONS.map(q=>r[q.id]||''),
   ]);
-  const ws = XLSX.utils.aoa_to_sheet([headers, ...rows]);
-  
-  const likertCount = EQ_QUESTIONS.length + DI_QUESTIONS.length + VS_QUESTIONS.length + BI_QUESTIONS.length + TD_QUESTIONS.length;
-  ws['!cols'] = [{wch:22},{wch:10},{wch:12},{wch:20},{wch:14},{wch:20},...Array(likertCount).fill({wch:6})];
-  
+  const ws = XLSX.utils.aoa_to_sheet([headers,...rows]);
+  ws['!cols']=[{wch:22},{wch:14},{wch:10},{wch:12},{wch:18},{wch:14},...Array(SE_QUESTIONS.length+TG_QUESTIONS.length).fill({wch:6})];
   const wb = XLSX.utils.book_new();
-  XLSX.utils.book_append_sheet(wb, ws, 'Survey Responses');
-  
-  const calcMean = keys => {
-    const vals = all.flatMap(r=>keys.map(k=>Number(r[k]))).filter(v=>v>0);
-    return vals.length ? (vals.reduce((a,b)=>a+b,0)/vals.length).toFixed(2) : 'N/A';
-  };
-  const summary = [
+  XLSX.utils.book_append_sheet(wb,ws,'Survey Responses');
+  const calcMean=keys=>{const vals=all.flatMap(r=>keys.map(k=>Number(r[k]))).filter(v=>v>0);return vals.length?(vals.reduce((a,b)=>a+b,0)/vals.length).toFixed(2):'N/A';};
+  const summary=[
     ['Sports Events Tourism Survey — Summary'],
-    ['Topic','The Role of Sports Events in Tourism Development in Saudi Arabia'],
-    ['Export Date', new Date().toLocaleString()],
-    ['Total Responses', all.length],
+    ['Topic','Evaluating the Contribution of Sports Events to Tourism Growth in Saudi Arabia'],
+    ['Export Date',new Date().toLocaleString()],
+    ['Total Responses',all.length],
     [],
     ['Variable','Items','Average Score'],
-    ['Sports Event Quality & Experience', `Q${EQ_QUESTIONS[0].num}–Q${EQ_QUESTIONS[EQ_QUESTIONS.length-1].num}`, calcMean(EQ_QUESTIONS.map(q=>q.id))],
-    ['Destination Image', `Q${DI_QUESTIONS[0].num}–Q${DI_QUESTIONS[DI_QUESTIONS.length-1].num}`, calcMean(DI_QUESTIONS.map(q=>q.id))],
-    ['Visitor Satisfaction', `Q${VS_QUESTIONS[0].num}–Q${VS_QUESTIONS[VS_QUESTIONS.length-1].num}`, calcMean(VS_QUESTIONS.map(q=>q.id))],
-    ['Behavioral Intentions', `Q${BI_QUESTIONS[0].num}–Q${BI_QUESTIONS[BI_QUESTIONS.length-1].num}`, calcMean(BI_QUESTIONS.map(q=>q.id))],
-    ['Tourism Development Perceptions', `Q${TD_QUESTIONS[0].num}–Q${TD_QUESTIONS[TD_QUESTIONS.length-1].num}`, calcMean(TD_QUESTIONS.map(q=>q.id))],
+    ['Sports Events',`SE1–SE${SE_QUESTIONS.length}`,calcMean(SE_QUESTIONS.map(q=>q.id))],
+    ['Tourism Growth',`TG1–TG${TG_QUESTIONS.length}`,calcMean(TG_QUESTIONS.map(q=>q.id))],
   ];
-  const ws2 = XLSX.utils.aoa_to_sheet(summary);
-  ws2['!cols'] = [{wch:40},{wch:20},{wch:16}];
-  XLSX.utils.book_append_sheet(wb, ws2, 'Summary');
-  XLSX.writeFile(wb, `SportsTourism_Survey_${new Date().toISOString().slice(0,10)}.xlsx`);
+  const ws2=XLSX.utils.aoa_to_sheet(summary);
+  ws2['!cols']=[{wch:30},{wch:50},{wch:16}];
+  XLSX.utils.book_append_sheet(wb,ws2,'Summary');
+  XLSX.writeFile(wb,`SportsTourism_Survey_${new Date().toISOString().slice(0,10)}.xlsx`);
 }
 
 function clearResponses() {
@@ -867,7 +719,6 @@ function clearResponses() {
   setTimeout(openDashboard, 100);
 }
 
-// ─── INIT ─────────────────────────────────────────────────────────────────────
 buildAll();
 updateCounterBadge();
 </script>
