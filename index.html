@@ -3,22 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Riyadh Season Survey | استبيان موسم الرياض</title>
-  <meta name="description" content="Academic survey on the impact of Riyadh Season event quality on visitor satisfaction and destination loyalty.">
+  <title>Sports Events Tourism Survey | استبيان السياحة الرياضية</title>
+  <meta name="description" content="Academic survey evaluating the contribution of sports events to tourism growth in Saudi Arabia.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
   <style>
     :root {
-      --primary: #0d4f2e;
-      --primary-light: #1a7a47;
-      --accent: #c9a84c;
-      --bg: #f5f7f5;
+      --primary: #0a1f5c;
+      --primary-light: #1a3a8f;
+      --accent: #4a90d9;
+      --bg: #f0f3fa;
       --card: #ffffff;
-      --text: #1c1c1c;
+      --text: #1c1c2e;
       --muted: #6b7280;
-      --border: #e5e7eb;
+      --border: #d0d8ef;
     }
     html[dir="rtl"] body { font-family: 'Amiri', serif; }
     html[dir="ltr"] body { font-family: 'Inter', sans-serif; }
@@ -28,7 +28,7 @@
     .section-card {
       background: var(--card);
       border-radius: 1rem;
-      box-shadow: 0 2px 16px rgba(13,79,46,0.08);
+      box-shadow: 0 2px 16px rgba(10,31,92,0.10);
       border-top: 4px solid var(--primary);
       padding: 2rem;
       margin-bottom: 2rem;
@@ -48,7 +48,7 @@
       background: #fff;
       user-select: none;
     }
-    .likert-btn:hover { border-color: var(--primary-light); color: var(--primary); background: #eaf5ee; }
+    .likert-btn:hover { border-color: var(--primary-light); color: var(--primary); background: #eaf0fb; }
     .likert-btn.selected { background: var(--primary); border-color: var(--primary); color: #fff; }
     .demo-option {
       display: flex; align-items: center; gap: 0.6rem;
@@ -60,8 +60,8 @@
       background: #fff;
       margin-bottom: 0.4rem;
     }
-    .demo-option:hover { border-color: var(--primary-light); background: #eaf5ee; }
-    .demo-option.selected { border-color: var(--primary); background: #eaf5ee; }
+    .demo-option:hover { border-color: var(--primary-light); background: #eaf0fb; }
+    .demo-option.selected { border-color: var(--primary); background: #eaf0fb; }
     .demo-option input { accent-color: var(--primary); }
     #lang-toggle {
       position: fixed; top: 1rem; right: 1rem; z-index: 100;
@@ -83,7 +83,7 @@
       transition: background 0.2s;
       display: flex; align-items: center; gap: 0.4rem;
     }
-    #admin-toggle:hover { background: #a07820; }
+    #admin-toggle:hover { background: #2a70b8; }
 
     /* ── PASSWORD MODAL ─────────────────────────── */
     #pw-modal {
@@ -99,7 +99,7 @@
       box-shadow: 0 8px 40px rgba(0,0,0,0.25);
       text-align: center;
     }
-    #pw-panel h3 { color: #0d4f2e; font-size: 1.1rem; margin: 0 0 0.5rem; }
+    #pw-panel h3 { color: var(--primary); font-size: 1.1rem; margin: 0 0 0.5rem; }
     #pw-panel p  { color: #6b7280; font-size: 0.82rem; margin: 0 0 1.25rem; }
     #pw-input {
       width: 100%; padding: 0.65rem 1rem;
@@ -108,17 +108,17 @@
       transition: border-color 0.2s;
       margin-bottom: 0.75rem;
     }
-    #pw-input:focus { border-color: #0d4f2e; }
+    #pw-input:focus { border-color: var(--primary); }
     #pw-error { color: #dc2626; font-size: 0.8rem; margin-bottom: 0.75rem; display: none; }
     #pw-submit {
       width: 100%; padding: 0.7rem;
-      background: #0d4f2e; color: #fff;
+      background: var(--primary); color: #fff;
       border: none; border-radius: 0.6rem;
       font-size: 1rem; font-weight: 700;
       cursor: pointer; transition: background 0.2s;
       margin-bottom: 0.5rem;
     }
-    #pw-submit:hover { background: #1a7a47; }
+    #pw-submit:hover { background: var(--primary-light); }
     #pw-cancel {
       width: 100%; padding: 0.5rem;
       background: transparent; color: #6b7280;
@@ -179,7 +179,7 @@
       padding: 0.9rem 2.5rem;
       font-size: 1.05rem; font-weight: 700;
       cursor: pointer; transition: background 0.2s, transform 0.1s;
-      box-shadow: 0 4px 14px rgba(13,79,46,0.25);
+      box-shadow: 0 4px 14px rgba(10,31,92,0.25);
     }
     #submit-btn:hover:not(:disabled) { background: var(--primary-light); transform: translateY(-1px); }
     #submit-btn:disabled { opacity: 0.65; cursor: not-allowed; }
@@ -187,6 +187,10 @@
     #thank-you.show { display: flex; }
     .error-msg { color: #dc2626; font-size: 0.78rem; margin-top: 0.25rem; display: none; }
     .error-msg.show { display: block; }
+    
+    .db-loading { text-align: center; padding: 1.5rem; color: var(--muted); font-size: 0.9rem; }
+    .db-error { background: #fef2f2; border: 1px solid #fca5a5; border-radius: 0.5rem; padding: 0.75rem 1rem; color: #b91c1c; font-size: 0.82rem; margin-top: 0.5rem; }
+
     html[dir="rtl"] #lang-toggle { right: auto; left: 4.5rem; }
     html[dir="rtl"] #admin-toggle { left: auto; right: 4.5rem; }
     html[dir="rtl"] .likert-row { flex-direction: row-reverse; }
@@ -197,7 +201,7 @@
     @keyframes fadeInUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
     .fade-in { animation: fadeInUp 0.5s ease both; }
     .hero {
-      background: linear-gradient(135deg, #0d4f2e 0%, #1a7a47 55%, #c9a84c 100%);
+      background: linear-gradient(135deg, #0a1f5c 0%, #1a3a8f 55%, #4a90d9 100%);
       color: #fff; border-radius: 1rem;
       padding: 2.5rem 2rem; margin-bottom: 2rem;
       position: relative; overflow: hidden;
@@ -205,8 +209,8 @@
     .hero::before {
       content: '';
       position: absolute; inset: 0;
-      background: url('https://images.unsplash.com/photo-1586724237569-f3d0c1dee8c6?w=1200&q=60') center/cover no-repeat;
-      opacity: 0.13;
+      background: url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1200&q=60') center/cover no-repeat;
+      opacity: 0.10;
     }
     .hero > * { position: relative; }
     .section-badge {
@@ -220,20 +224,20 @@
     }
     .sticky-progress {
       position: sticky; top: 0; z-index: 50;
-      background: rgba(245,247,245,0.95);
+      background: rgba(240,243,250,0.95);
       backdrop-filter: blur(6px);
       padding: 0.6rem 0; margin-bottom: 1.5rem;
     }
     .counter-badge {
       display: inline-flex; align-items: center; gap: 0.4rem;
-      background: linear-gradient(135deg, #0d4f2e, #1a7a47);
+      background: linear-gradient(135deg, #0a1f5c, #1a3a8f);
       color: #fff; border-radius: 2rem;
       padding: 0.6rem 1.2rem;
       font-size: 1rem; font-weight: 700;
-      box-shadow: 0 2px 10px rgba(13,79,46,0.2);
+      box-shadow: 0 2px 10px rgba(10,31,92,0.2);
     }
     .resp-table { width: 100%; border-collapse: collapse; font-size: 0.78rem; }
-    .resp-table th { background: #0d4f2e; color: #fff; padding: 0.4rem 0.6rem; text-align: left; }
+    .resp-table th { background: #0a1f5c; color: #fff; padding: 0.4rem 0.6rem; text-align: left; }
     .resp-table td { padding: 0.35rem 0.6rem; border-bottom: 1px solid #e5e7eb; }
     .resp-table tr:nth-child(even) td { background: #f9fafb; }
     .screening-stop {
@@ -242,15 +246,6 @@
       border-radius: 0.75rem; padding: 1rem 1.25rem;
       color: #b91c1c; font-weight: 600; font-size: 0.9rem;
       margin-top: 0.5rem;
-    }
-    .db-loading {
-      text-align: center; padding: 1.5rem;
-      color: var(--muted); font-size: 0.9rem;
-    }
-    .db-error {
-      background: #fef2f2; border: 1px solid #fca5a5;
-      border-radius: 0.5rem; padding: 0.75rem 1rem;
-      color: #b91c1c; font-size: 0.82rem; margin-top: 0.5rem;
     }
     .max-w-3xl { max-width: 48rem; }
     .mx-auto { margin-left: auto; margin-right: auto; }
@@ -265,11 +260,8 @@
     .mb-6 { margin-bottom: 1.5rem; }
     .mb-10 { margin-bottom: 2.5rem; }
     .mt-3 { margin-top: 0.75rem; }
-    .mt-4 { margin-top: 1rem; }
-    .mt-6 { margin-top: 1.5rem; }
     .text-xs { font-size: 0.75rem; line-height: 1rem; }
     .text-sm { font-size: 0.875rem; line-height: 1.25rem; }
-    .text-base { font-size: 1rem; line-height: 1.5rem; }
     .text-lg { font-size: 1.125rem; line-height: 1.75rem; }
     .text-xl { font-size: 1.25rem; line-height: 1.75rem; }
     .text-2xl { font-size: 1.5rem; line-height: 2rem; }
@@ -281,7 +273,6 @@
     .flex-col { flex-direction: column; }
     .flex-wrap { flex-wrap: wrap; }
     .items-center { align-items: center; }
-    .justify-center { justify-content: center; }
     .justify-between { justify-content: space-between; }
     .gap-3 { gap: 0.75rem; }
     .grid { display: grid; }
@@ -300,7 +291,7 @@
     .text-6xl { font-size: 3.75rem; line-height: 1; }
     .block { display: block; }
     p { margin: 0; }
-    h1, h2 { margin: 0; }
+    h1, h2, h3 { margin: 0; }
   </style>
 </head>
 <body>
@@ -308,11 +299,10 @@
   <button id="lang-toggle" onclick="toggleLang()">عربي 🌐</button>
 
   <button id="admin-toggle" onclick="checkAdminPassword()">
-    📊 <span id="admin-btn-label">Responses</span>
-    <span id="response-count-badge" style="background:#fff;color:#a16207;border-radius:9999px;padding:0.125rem 0.5rem;font-size:0.75rem;font-weight:700;margin-left:0.25rem;">…</span>
+    📊 <span>Responses</span>
+    <span id="response-count-badge" style="background:#fff;color:#0a1f5c;border-radius:9999px;padding:0.125rem 0.5rem;font-size:0.75rem;font-weight:700;margin-left:0.25rem;">…</span>
   </button>
 
-  <!-- ── PASSWORD MODAL ──────────────────────────────── -->
   <div id="pw-modal">
     <div id="pw-panel">
       <h3>🔐 Admin Access</h3>
@@ -327,13 +317,13 @@
   <div id="dashboard" role="dialog" aria-modal="true">
     <div id="dashboard-panel">
       <button id="close-dashboard" onclick="closeDashboard()">✕</button>
-      <h2 class="text-xl font-bold mb-1" style="color:#0d4f2e;">📊 Survey Responses Dashboard</h2>
-      <p class="text-sm text-gray-500 mb-4">Responses are stored in Supabase (shared across all devices).</p>
+      <h2 class="text-xl font-bold mb-1" style="color:#0a1f5c;">📊 Survey Responses Dashboard</h2>
+      <p class="text-sm text-gray-500 mb-4">Responses are stored securely in Supabase.</p>
       <div class="flex items-center gap-3 mb-5">
         <div class="counter-badge">
           <span>📝</span>
           <span id="dash-count">…</span>
-          <span id="dash-count-label">Responses Collected</span>
+          <span>Responses Collected</span>
         </div>
       </div>
       <div id="stats-grid" class="grid grid-cols-2 gap-3 mb-5">
@@ -389,7 +379,6 @@
 
     <form id="survey-form" novalidate>
 
-      <!-- SECTION A: SCREENING -->
       <div class="section-card fade-in">
         <div class="section-badge" data-en="Section A" data-ar="القسم أ">Section A</div>
         <h2 class="text-xl font-bold mb-1" style="color:#0a1f5c;"
@@ -420,7 +409,6 @@
         </div>
       </div>
 
-      <!-- SECTION B: DEMOGRAPHICS -->
       <div class="section-card fade-in">
         <div class="section-badge" data-en="Section B" data-ar="القسم ب">Section B</div>
         <h2 class="text-xl font-bold mb-1" style="color:#0a1f5c;"
@@ -431,7 +419,6 @@
           Please provide some information about yourself for statistical analysis.
         </p>
 
-        <!-- Gender -->
         <div class="mb-5" id="wrap-d1">
           <p class="font-semibold text-gray-800 mb-2" data-en="2. Gender" data-ar="2. الجنس">2. Gender</p>
           <label class="demo-option" onclick="selectDemo(this,'d1')"><input type="radio" name="d1" value="Male"> <span data-en="Male" data-ar="ذكر">Male</span></label>
@@ -440,7 +427,6 @@
           <p class="error-msg" id="err-d1" data-en="Please select an option." data-ar="يرجى اختيار إجابة.">Please select an option.</p>
         </div>
 
-        <!-- Age -->
         <div class="mb-5" id="wrap-d2">
           <p class="font-semibold text-gray-800 mb-2" data-en="3. Age" data-ar="3. العمر">3. Age</p>
           <label class="demo-option" onclick="selectDemo(this,'d2')"><input type="radio" name="d2" value="Less than 20"> <span data-en="Less than 20" data-ar="أقل من 20">Less than 20</span></label>
@@ -451,7 +437,6 @@
           <p class="error-msg" id="err-d2" data-en="Please select an option." data-ar="يرجى اختيار إجابة.">Please select an option.</p>
         </div>
 
-        <!-- Nationality -->
         <div class="mb-5" id="wrap-d3">
           <p class="font-semibold text-gray-800 mb-2" data-en="4. Nationality" data-ar="4. الجنسية">4. Nationality</p>
           <label class="demo-option" onclick="selectDemo(this,'d3')"><input type="radio" name="d3" value="Saudi"> <span data-en="Saudi" data-ar="سعودي">Saudi</span></label>
@@ -459,7 +444,6 @@
           <p class="error-msg" id="err-d3" data-en="Please select an option." data-ar="يرجى اختيار إجابة.">Please select an option.</p>
         </div>
 
-        <!-- Education -->
         <div class="mb-5" id="wrap-d4">
           <p class="font-semibold text-gray-800 mb-2" data-en="5. Educational Level" data-ar="5. المستوى التعليمي">5. Educational Level</p>
           <label class="demo-option" onclick="selectDemo(this,'d4')"><input type="radio" name="d4" value="High school or below"> <span data-en="High school or below" data-ar="ثانوية عامة أو أقل">High school or below</span></label>
@@ -470,7 +454,6 @@
           <p class="error-msg" id="err-d4" data-en="Please select an option." data-ar="يرجى اختيار إجابة.">Please select an option.</p>
         </div>
 
-        <!-- Frequency -->
         <div class="mb-5" id="wrap-d5">
           <p class="font-semibold text-gray-800 mb-2" data-en="6. Frequency of attending or following sports events" data-ar="6. تكرار حضور أو متابعة الفعاليات الرياضية">6. Frequency of attending or following sports events</p>
           <label class="demo-option" onclick="selectDemo(this,'d5')"><input type="radio" name="d5" value="Rarely"> <span data-en="Rarely" data-ar="نادراً">Rarely</span></label>
@@ -482,7 +465,6 @@
         </div>
       </div>
 
-      <!-- SECTION C: STUDY VARIABLES -->
       <div class="section-card fade-in">
         <div class="section-badge" data-en="Section C" data-ar="القسم ج">Section C</div>
         <h2 class="text-xl font-bold mb-1" style="color:#0a1f5c;"
@@ -531,15 +513,14 @@
 
 <script>
 // ══════════════════════════════════════════════════════════════
-//  ⚙️  SUPABASE CONFIG
-//  Get from: https://supabase.com → Project Settings → API
+//  ⚙️  SUPABASE CONFIGURATION
 // ══════════════════════════════════════════════════════════════
-const SUPABASE_URL      = 'https://ssigzgrpdnlqhkwzkesl.supabase.co';
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNzaWd6Z3JwZG5scWhrd3prZXNsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY5NTAyNDYsImV4cCI6MjA5MjUyNjI0Nn0.za7i0DhkN5gh5WcAjkelWCSOHn026m-L_YCwzMO8rCk';
-const TABLE_NAME        = 'riyadh_season_responses';
+const SUPABASE_URL      = 'https://drbqcaffhbmuvafssnwe.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRyYnFjYWZmaGJtdXZhZnNzbndlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY5NTI1ODUsImV4cCI6MjA5MjUyODU4NX0.QIljzweCCnghDst1hCASPYCqV5EOtzOfPyeFuCGWpCg';
+const TABLE_NAME        = 'sports_tourism_responses';
 
 // ══════════════════════════════════════════════════════════════
-//  🔐  ADMIN PASSWORD  — change this to your own password
+//  🔐  ADMIN PASSWORD
 // ══════════════════════════════════════════════════════════════
 const ADMIN_PASSWORD = 'Admin@2025';
 // ══════════════════════════════════════════════════════════════
@@ -568,9 +549,7 @@ function submitPassword() {
   }
 }
 
-function closePwModal() {
-  document.getElementById('pw-modal').classList.remove('open');
-}
+function closePwModal() { document.getElementById('pw-modal').classList.remove('open'); }
 
 // ─── SUPABASE HELPERS ─────────────────────────────────────────
 const sbHeaders = () => ({
@@ -608,32 +587,25 @@ async function sbCount() {
   return range ? range.split('/')[1] : '?';
 }
 
-// ─── QUESTION DATA ────────────────────────────────────────────
-const EQ_QUESTIONS = [
-  { id:'eq1', num:7,  en:'The overall organization of Riyadh Season events is highly professional.', ar:'التنظيم العام لفعاليات موسم الرياض احترافي للغاية.' },
-  { id:'eq2', num:8,  en:'The variety of activities offered is diverse and engaging.', ar:'تشكيلة الأنشطة المقدمة متنوعة وجذابة.' },
-  { id:'eq3', num:9,  en:'The events provide a high level of entertainment value.', ar:'الفعاليات توفر مستوى عالياً من قيمة الترفيه.' },
-  { id:'eq4', num:10, en:'Facilities and infrastructure meet visitor expectations.', ar:'المرافق والبنية التحتية تلبي توقعات الزوار.' },
-  { id:'eq5', num:11, en:'Event scheduling and time management are well coordinated.', ar:'جداول الفعاليات وإدارة الوقت منسقة بشكل جيد.' },
-  { id:'eq6', num:12, en:'Staff and service providers are responsive and helpful.', ar:'الموظفون ومقدمو الخدمات متجاوبون ومتعاونون.' },
-  { id:'eq7', num:13, en:'The event environment is safe and well-managed.', ar:'بيئة الفعالية آمنة وتُدار بشكل جيد.' },
-  { id:'eq8', num:14, en:'The overall experience reflects high-quality standards.', ar:'التجربة الإجمالية تعكس معايير جودة عالية.' },
+// ─── DATA ────────────────────────────────────────────────────────────────────
+const SE_QUESTIONS = [
+  { id:'se1', num:7,  en:'Sports events in Saudi Arabia attract a large number of visitors.', ar:'الفعاليات الرياضية في السعودية تستقطب عدداً كبيراً من الزوار.' },
+  { id:'se2', num:8,  en:'Sports events increase the visibility of Saudi Arabia as a tourist destination.', ar:'الفعاليات الرياضية تزيد من ظهور السعودية كوجهة سياحية.' },
+  { id:'se3', num:9,  en:'Sports events contribute to improving the image of Saudi Arabia internationally.', ar:'الفعاليات الرياضية تسهم في تحسين صورة السعودية دولياً.' },
+  { id:'se4', num:10, en:'Hosting sports events enhances the overall attractiveness of tourist destinations.', ar:'استضافة الفعاليات الرياضية تعزز جاذبية الوجهات السياحية بشكل عام.' },
+  { id:'se5', num:11, en:'Sports events encourage both domestic and international travel.', ar:'الفعاليات الرياضية تشجع السفر المحلي والدولي.' },
+  { id:'se6', num:12, en:'Sports events lead to increased demand for hospitality services (hotels, restaurants, etc.).', ar:'الفعاليات الرياضية تؤدي إلى زيادة الطلب على خدمات الضيافة (فنادق، مطاعم، إلخ).' },
+  { id:'se7', num:13, en:'Sports events contribute to infrastructure and service development.', ar:'الفعاليات الرياضية تسهم في تطوير البنية التحتية والخدمات.' },
+  { id:'se8', num:14, en:'Sports events are well-organized and professionally managed in Saudi Arabia.', ar:'الفعاليات الرياضية في السعودية منظمة وتُدار باحترافية.' },
 ];
-const VS_QUESTIONS = [
-  { id:'vs1', num:15, en:'My overall experience with Riyadh Season was satisfying.', ar:'تجربتي الإجمالية مع موسم الرياض كانت مُرضية.' },
-  { id:'vs2', num:16, en:'The events met my expectations.', ar:'الفعاليات لبّت توقعاتي.' },
-  { id:'vs3', num:17, en:'I felt pleased with the quality of the experience.', ar:'شعرت بالرضا تجاه جودة التجربة.' },
-  { id:'vs4', num:18, en:'Attending Riyadh Season was a worthwhile decision.', ar:'حضور موسم الرياض كان قراراً صائباً.' },
-  { id:'vs5', num:19, en:'I enjoyed the overall atmosphere of the events.', ar:'استمتعت بالأجواء العامة للفعاليات.' },
-  { id:'vs6', num:20, en:'My experience exceeded what I had anticipated.', ar:'تجربتي تجاوزت ما كنت أتوقعه.' },
-];
-const DL_QUESTIONS = [
-  { id:'dl1', num:21, en:'I would consider visiting Riyadh again in the future.', ar:'أفكر في زيارة الرياض مرة أخرى في المستقبل.' },
-  { id:'dl2', num:22, en:'I intend to attend future Riyadh Season events.', ar:'أنوي حضور فعاليات موسم الرياض القادمة.' },
-  { id:'dl3', num:23, en:'I would recommend Riyadh as a tourism destination to others.', ar:'سأوصي بالرياض كوجهة سياحية للآخرين.' },
-  { id:'dl4', num:24, en:'I would encourage friends and family to visit Riyadh Season.', ar:'سأشجع أصدقائي وعائلتي على زيارة موسم الرياض.' },
-  { id:'dl5', num:25, en:'I have a positive intention to revisit Riyadh based on this experience.', ar:'لديّ نية إيجابية لإعادة زيارة الرياض بناءً على هذه التجربة.' },
-  { id:'dl6', num:26, en:'I would share my positive experience with others.', ar:'سأشارك الآخرين تجربتي الإيجابية.' },
+const TG_QUESTIONS = [
+  { id:'tg1', num:15, en:'Sports events contribute to an increase in tourist arrivals in Saudi Arabia.', ar:'الفعاليات الرياضية تسهم في زيادة الوافدين السياحيين إلى السعودية.' },
+  { id:'tg2', num:16, en:'Sports events lead to higher tourism revenues.', ar:'الفعاليات الرياضية تؤدي إلى زيادة الإيرادات السياحية.' },
+  { id:'tg3', num:17, en:'Sports events increase hotel occupancy rates.', ar:'الفعاليات الرياضية ترفع معدلات إشغال الفنادق.' },
+  { id:'tg4', num:18, en:'Sports events extend tourists\' length of stay.', ar:'الفعاليات الرياضية تمدد مدة إقامة السياح.' },
+  { id:'tg5', num:19, en:'Sports events contribute to the overall growth of the tourism sector.', ar:'الفعاليات الرياضية تسهم في النمو الشامل للقطاع السياحي.' },
+  { id:'tg6', num:20, en:'Sports events enhance the competitiveness of Saudi Arabia as a tourism destination.', ar:'الفعاليات الرياضية تعزز تنافسية السعودية كوجهة سياحية.' },
+  { id:'tg7', num:21, en:'Sports events support sustainable tourism development in Saudi Arabia.', ar:'الفعاليات الرياضية تدعم التنمية السياحية المستدامة في السعودية.' },
 ];
 
 const LIKERT_LABELS = {
@@ -644,7 +616,6 @@ const LIKERT_LABELS = {
 let currentLang = 'en';
 const responses = {};
 
-// ─── UI BUILDERS ──────────────────────────────────────────────
 function buildLikertBlock(q) {
   let btns = '';
   for (let v = 1; v <= 5; v++) {
@@ -662,12 +633,10 @@ function buildLikertBlock(q) {
 }
 
 function buildAll() {
-  document.getElementById('eq-questions').innerHTML = EQ_QUESTIONS.map(buildLikertBlock).join('');
-  document.getElementById('vs-questions').innerHTML = VS_QUESTIONS.map(buildLikertBlock).join('');
-  document.getElementById('dl-questions').innerHTML = DL_QUESTIONS.map(buildLikertBlock).join('');
+  document.getElementById('se-questions').innerHTML = SE_QUESTIONS.map(buildLikertBlock).join('');
+  document.getElementById('tg-questions').innerHTML = TG_QUESTIONS.map(buildLikertBlock).join('');
 }
 
-// ─── INTERACTIONS ─────────────────────────────────────────────
 function selectLikert(btn, qid, val) {
   document.querySelectorAll(`.likert-btn[data-qid="${qid}"]`).forEach(b => b.classList.remove('selected'));
   btn.classList.add('selected');
@@ -702,9 +671,8 @@ function selectScreen(label, name, val) {
 
 function getAllKeys() {
   return ['sc1','d1','d2','d3','d4','d5',
-    ...EQ_QUESTIONS.map(q=>q.id),
-    ...VS_QUESTIONS.map(q=>q.id),
-    ...DL_QUESTIONS.map(q=>q.id)];
+    ...SE_QUESTIONS.map(q=>q.id),
+    ...TG_QUESTIONS.map(q=>q.id)];
 }
 
 function updateProgress() {
@@ -736,7 +704,7 @@ function toggleLang() {
 // ─── SUBMIT ───────────────────────────────────────────────────
 async function submitSurvey() {
   if (responses.sc1 === 'no') {
-    alert(currentLang === 'ar' ? 'عذراً، هذا الاستبيان مخصص لمن زار موسم الرياض.' : 'Sorry, this survey is for those who have visited Riyadh Season.');
+    alert(currentLang === 'ar' ? 'عذراً، أنت غير مؤهل لهذه الدراسة.' : 'Sorry, you are not eligible for this study.');
     return;
   }
   let valid = true;
@@ -821,40 +789,36 @@ async function openDashboard() {
       const vals = all.flatMap(r => keys.map(k => Number(r[k]))).filter(v => v > 0);
       return vals.length ? (vals.reduce((a,b)=>a+b,0)/vals.length).toFixed(2) : 'N/A';
     };
-    const eqAvg = mean(EQ_QUESTIONS.map(q=>q.id));
-    const vsAvg = mean(VS_QUESTIONS.map(q=>q.id));
-    const dlAvg = mean(DL_QUESTIONS.map(q=>q.id));
+    
+    const seAvg = mean(SE_QUESTIONS.map(q=>q.id));
+    const tgAvg = mean(TG_QUESTIONS.map(q=>q.id));
     const tg = top(genders), ta = top(ages);
 
     document.getElementById('stats-grid').innerHTML = `
-      <div style="background:#f0fdf4;border-radius:0.5rem;padding:0.75rem;text-align:center;">
+      <div style="background:#eff6ff;border-radius:0.5rem;padding:0.75rem;text-align:center;">
         <p style="font-size:0.75rem;color:#6b7280;">Top Gender</p>
-        <p style="font-weight:700;color:#0d4f2e;">${tg ? tg[0]+' ('+tg[1]+')' : '—'}</p>
+        <p style="font-weight:700;color:#0a1f5c;">${tg ? tg[0]+' ('+tg[1]+')' : '—'}</p>
       </div>
-      <div style="background:#f0fdf4;border-radius:0.5rem;padding:0.75rem;text-align:center;">
+      <div style="background:#eff6ff;border-radius:0.5rem;padding:0.75rem;text-align:center;">
         <p style="font-size:0.75rem;color:#6b7280;">Top Age Group</p>
-        <p style="font-weight:700;color:#0d4f2e;">${ta ? ta[0]+' ('+ta[1]+')' : '—'}</p>
+        <p style="font-weight:700;color:#0a1f5c;">${ta ? ta[0]+' ('+ta[1]+')' : '—'}</p>
       </div>
-      <div style="background:#fefce8;border-radius:0.5rem;padding:0.75rem;text-align:center;">
-        <p style="font-size:0.75rem;color:#6b7280;">Avg. Event Quality</p>
-        <p style="font-weight:700;color:#a16207;">${eqAvg} / 5</p>
+      <div style="background:#e0f2fe;border-radius:0.5rem;padding:0.75rem;text-align:center;">
+        <p style="font-size:0.75rem;color:#6b7280;">Avg. Sports Events</p>
+        <p style="font-weight:700;color:#0369a1;">${seAvg} / 5</p>
       </div>
-      <div style="background:#fefce8;border-radius:0.5rem;padding:0.75rem;text-align:center;">
-        <p style="font-size:0.75rem;color:#6b7280;">Avg. Satisfaction</p>
-        <p style="font-weight:700;color:#a16207;">${vsAvg} / 5</p>
-      </div>
-      <div style="background:#f0fdf4;border-radius:0.5rem;padding:0.75rem;text-align:center;grid-column:span 2;">
-        <p style="font-size:0.75rem;color:#6b7280;">Avg. Destination Loyalty</p>
-        <p style="font-weight:700;color:#0d4f2e;">${dlAvg} / 5</p>
+      <div style="background:#e0f2fe;border-radius:0.5rem;padding:0.75rem;text-align:center;">
+        <p style="font-size:0.75rem;color:#6b7280;">Avg. Tourism Growth</p>
+        <p style="font-weight:700;color:#0369a1;">${tgAvg} / 5</p>
       </div>`;
 
     const recent = all.slice(-5).reverse();
     document.getElementById('recent-responses').innerHTML = `
       <p style="font-size:0.875rem;font-weight:600;color:#374151;margin-bottom:0.5rem;">Recent Responses (last ${recent.length}):</p>
       <div style="overflow-x:auto"><table class="resp-table">
-        <thead><tr><th>#</th><th>Time</th><th>Gender</th><th>Age</th><th>EQ Avg</th></tr></thead>
+        <thead><tr><th>#</th><th>Time</th><th>Gender</th><th>Age</th><th>SE Avg</th></tr></thead>
         <tbody>${recent.map((r,i)=>{
-          const vals = EQ_QUESTIONS.map(q=>Number(r[q.id])).filter(v=>v>0);
+          const vals = SE_QUESTIONS.map(q=>Number(r[q.id])).filter(v=>v>0);
           const avg  = vals.length ? (vals.reduce((a,b)=>a+b,0)/vals.length).toFixed(1) : '—';
           return `<tr><td>${all.length-i}</td><td>${r.timestamp||'—'}</td><td>${r.d1||'—'}</td><td>${r.d2||'—'}</td><td>${avg}</td></tr>`;
         }).join('')}</tbody>
@@ -879,41 +843,42 @@ async function exportToExcel() {
     if (!all.length) { alert('No responses to export yet.'); return; }
 
     const headers = ['Timestamp','Gender','Age','Nationality','Education','Frequency',
-      ...EQ_QUESTIONS.map(q=>`EQ${q.id.replace('eq','')}`),
-      ...VS_QUESTIONS.map(q=>`VS${q.id.replace('vs','')}`),
-      ...DL_QUESTIONS.map(q=>`DL${q.id.replace('dl','')}`)];
+      ...SE_QUESTIONS.map(q=>`SE${q.id.replace('se','')}`),
+      ...TG_QUESTIONS.map(q=>`TG${q.id.replace('tg','')}`)];
+    
     const rows = all.map(r=>[
       r.timestamp, r.d1, r.d2, r.d3, r.d4, r.d5,
-      ...EQ_QUESTIONS.map(q=>r[q.id]||''),
-      ...VS_QUESTIONS.map(q=>r[q.id]||''),
-      ...DL_QUESTIONS.map(q=>r[q.id]||''),
+      ...SE_QUESTIONS.map(q=>r[q.id]||''),
+      ...TG_QUESTIONS.map(q=>r[q.id]||''),
     ]);
+    
     const ws = XLSX.utils.aoa_to_sheet([headers,...rows]);
     ws['!cols']=[{wch:22},{wch:14},{wch:10},{wch:12},{wch:18},{wch:14},
-      ...Array(EQ_QUESTIONS.length+VS_QUESTIONS.length+DL_QUESTIONS.length).fill({wch:6})];
+      ...Array(SE_QUESTIONS.length+TG_QUESTIONS.length).fill({wch:6})];
 
     const calcMean = keys => {
       const vals = all.flatMap(r=>keys.map(k=>Number(r[k]))).filter(v=>v>0);
       return vals.length?(vals.reduce((a,b)=>a+b,0)/vals.length).toFixed(2):'N/A';
     };
+    
     const summary = [
-      ['Riyadh Season Survey — Summary'],
-      ['Topic','The Impact of Riyadh Season Event Quality on Visitor Satisfaction and Destination Loyalty'],
+      ['Sports Events Tourism Survey — Summary'],
+      ['Topic','Evaluating the Contribution of Sports Events to Tourism Growth in Saudi Arabia'],
       ['Export Date', new Date().toLocaleString()],
       ['Total Responses', all.length],
       [],
       ['Variable','Items','Average Score'],
-      ['Event Quality (EQ)',`EQ1–EQ${EQ_QUESTIONS.length}`,calcMean(EQ_QUESTIONS.map(q=>q.id))],
-      ['Visitor Satisfaction (VS)',`VS1–VS${VS_QUESTIONS.length}`,calcMean(VS_QUESTIONS.map(q=>q.id))],
-      ['Destination Loyalty (DL)',`DL1–DL${DL_QUESTIONS.length}`,calcMean(DL_QUESTIONS.map(q=>q.id))],
+      ['Sports Events',`SE1–SE${SE_QUESTIONS.length}`,calcMean(SE_QUESTIONS.map(q=>q.id))],
+      ['Tourism Growth',`TG1–TG${TG_QUESTIONS.length}`,calcMean(TG_QUESTIONS.map(q=>q.id))],
     ];
+    
     const ws2 = XLSX.utils.aoa_to_sheet(summary);
-    ws2['!cols'] = [{wch:30},{wch:55},{wch:16}];
+    ws2['!cols'] = [{wch:30},{wch:50},{wch:16}];
 
     const wb = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(wb, ws, 'Survey Responses');
     XLSX.utils.book_append_sheet(wb, ws2, 'Summary');
-    XLSX.writeFile(wb, `RiyadhSeason_Survey_${new Date().toISOString().slice(0,10)}.xlsx`);
+    XLSX.writeFile(wb, `SportsTourism_Survey_${new Date().toISOString().slice(0,10)}.xlsx`);
   } catch(err) {
     alert('Export error: ' + err.message);
   } finally {
