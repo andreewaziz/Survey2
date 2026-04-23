@@ -83,7 +83,50 @@
       transition: background 0.2s;
       display: flex; align-items: center; gap: 0.4rem;
     }
-    #admin-toggle:hover { background: #2a70b8; }
+   #admin-toggle:hover { background: #a07820; }
+
+    /* ── PASSWORD MODAL ─────────────────────────── */
+    #pw-modal {
+      display: none;
+      position: fixed; inset: 0; z-index: 300;
+      background: rgba(0,0,0,0.6);
+      align-items: center; justify-content: center;
+    }
+    #pw-modal.open { display: flex; }
+    #pw-panel {
+      background: #fff; border-radius: 1.2rem;
+      padding: 2rem; width: 90%; max-width: 360px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.25);
+      text-align: center;
+    }
+    #pw-panel h3 { color: #0d4f2e; font-size: 1.1rem; margin: 0 0 0.5rem; }
+    #pw-panel p  { color: #6b7280; font-size: 0.82rem; margin: 0 0 1.25rem; }
+    #pw-input {
+      width: 100%; padding: 0.65rem 1rem;
+      border: 2px solid #e5e7eb; border-radius: 0.6rem;
+      font-size: 1rem; outline: none;
+      transition: border-color 0.2s;
+      margin-bottom: 0.75rem;
+    }
+    #pw-input:focus { border-color: #0d4f2e; }
+    #pw-error { color: #dc2626; font-size: 0.8rem; margin-bottom: 0.75rem; display: none; }
+    #pw-submit {
+      width: 100%; padding: 0.7rem;
+      background: #0d4f2e; color: #fff;
+      border: none; border-radius: 0.6rem;
+      font-size: 1rem; font-weight: 700;
+      cursor: pointer; transition: background 0.2s;
+      margin-bottom: 0.5rem;
+    }
+    #pw-submit:hover { background: #1a7a47; }
+    #pw-cancel {
+      width: 100%; padding: 0.5rem;
+      background: transparent; color: #6b7280;
+      border: none; font-size: 0.85rem;
+      cursor: pointer;
+    }
+    #pw-cancel:hover { color: #374151; }
+
     #dashboard {
       display: none;
       position: fixed; inset: 0; z-index: 200;
@@ -130,33 +173,6 @@
       display: flex; align-items: center; gap: 0.5rem;
     }
     #clear-btn:hover { background: #b91c1c; }
-    #submit-btn {
-      background: var(--primary); color: #fff; border: none;
-      border-radius: 0.75rem;
-      padding: 0.9rem 2.5rem;
-      font-size: 1.05rem; font-weight: 700;
-      cursor: pointer; transition: background 0.2s, transform 0.1s;
-      box-shadow: 0 4px 14px rgba(10,31,92,0.25);
-    }
-    #submit-btn:hover { background: var(--primary-light); transform: translateY(-1px); }
-    #thank-you { display: none; }
-    .error-msg { color: #dc2626; font-size: 0.78rem; margin-top: 0.25rem; display: none; }
-    .error-msg.show { display: block; }
-    html[dir="rtl"] #lang-toggle { right: auto; left: 4.5rem; }
-    html[dir="rtl"] #admin-toggle { left: auto; right: 4.5rem; }
-    html[dir="rtl"] .likert-row { flex-direction: row-reverse; }
-    html[dir="rtl"] .demo-option { flex-direction: row-reverse; }
-    ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: #f1f1f1; }
-    ::-webkit-scrollbar-thumb { background: var(--primary-light); border-radius: 3px; }
-    @keyframes fadeInUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
-    .fade-in { animation: fadeInUp 0.5s ease both; }
-    .hero {
-      background: linear-gradient(135deg, #0a1f5c 0%, #1a3a8f 55%, #4a90d9 100%);
-      color: #fff; border-radius: 1rem;
-      padding: 2.5rem 2rem; margin-bottom: 2rem;
-      position: relative; overflow: hidden;
-    }
     .hero::before {
       content: '';
       position: absolute; inset: 0;
