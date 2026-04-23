@@ -3,22 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sports Events Tourism Survey | استبيان السياحة الرياضية</title>
-  <meta name="description" content="Academic survey evaluating the contribution of sports events to tourism growth in Saudi Arabia.">
+  <title>Riyadh Season Survey | استبيان موسم الرياض</title>
+  <meta name="description" content="Academic survey on the impact of Riyadh Season event quality on visitor satisfaction and destination loyalty.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
   <style>
     :root {
-      --primary: #0a1f5c;
-      --primary-light: #1a3a8f;
-      --accent: #4a90d9;
-      --bg: #f0f3fa;
+      --primary: #0d4f2e;
+      --primary-light: #1a7a47;
+      --accent: #c9a84c;
+      --bg: #f5f7f5;
       --card: #ffffff;
-      --text: #1c1c2e;
+      --text: #1c1c1c;
       --muted: #6b7280;
-      --border: #d0d8ef;
+      --border: #e5e7eb;
     }
     html[dir="rtl"] body { font-family: 'Amiri', serif; }
     html[dir="ltr"] body { font-family: 'Inter', sans-serif; }
@@ -28,7 +28,7 @@
     .section-card {
       background: var(--card);
       border-radius: 1rem;
-      box-shadow: 0 2px 16px rgba(10,31,92,0.10);
+      box-shadow: 0 2px 16px rgba(13,79,46,0.08);
       border-top: 4px solid var(--primary);
       padding: 2rem;
       margin-bottom: 2rem;
@@ -48,7 +48,7 @@
       background: #fff;
       user-select: none;
     }
-    .likert-btn:hover { border-color: var(--primary-light); color: var(--primary); background: #eaf0fb; }
+    .likert-btn:hover { border-color: var(--primary-light); color: var(--primary); background: #eaf5ee; }
     .likert-btn.selected { background: var(--primary); border-color: var(--primary); color: #fff; }
     .demo-option {
       display: flex; align-items: center; gap: 0.6rem;
@@ -60,8 +60,8 @@
       background: #fff;
       margin-bottom: 0.4rem;
     }
-    .demo-option:hover { border-color: var(--primary-light); background: #eaf0fb; }
-    .demo-option.selected { border-color: var(--primary); background: #eaf0fb; }
+    .demo-option:hover { border-color: var(--primary-light); background: #eaf5ee; }
+    .demo-option.selected { border-color: var(--primary); background: #eaf5ee; }
     .demo-option input { accent-color: var(--primary); }
     #lang-toggle {
       position: fixed; top: 1rem; right: 1rem; z-index: 100;
@@ -83,7 +83,7 @@
       transition: background 0.2s;
       display: flex; align-items: center; gap: 0.4rem;
     }
-   #admin-toggle:hover { background: #a07820; }
+    #admin-toggle:hover { background: #a07820; }
 
     /* ── PASSWORD MODAL ─────────────────────────── */
     #pw-modal {
@@ -173,11 +173,40 @@
       display: flex; align-items: center; gap: 0.5rem;
     }
     #clear-btn:hover { background: #b91c1c; }
+    #submit-btn {
+      background: var(--primary); color: #fff; border: none;
+      border-radius: 0.75rem;
+      padding: 0.9rem 2.5rem;
+      font-size: 1.05rem; font-weight: 700;
+      cursor: pointer; transition: background 0.2s, transform 0.1s;
+      box-shadow: 0 4px 14px rgba(13,79,46,0.25);
+    }
+    #submit-btn:hover:not(:disabled) { background: var(--primary-light); transform: translateY(-1px); }
+    #submit-btn:disabled { opacity: 0.65; cursor: not-allowed; }
+    #thank-you { display: none; }
+    #thank-you.show { display: flex; }
+    .error-msg { color: #dc2626; font-size: 0.78rem; margin-top: 0.25rem; display: none; }
+    .error-msg.show { display: block; }
+    html[dir="rtl"] #lang-toggle { right: auto; left: 4.5rem; }
+    html[dir="rtl"] #admin-toggle { left: auto; right: 4.5rem; }
+    html[dir="rtl"] .likert-row { flex-direction: row-reverse; }
+    html[dir="rtl"] .demo-option { flex-direction: row-reverse; }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #f1f1f1; }
+    ::-webkit-scrollbar-thumb { background: var(--primary-light); border-radius: 3px; }
+    @keyframes fadeInUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+    .fade-in { animation: fadeInUp 0.5s ease both; }
+    .hero {
+      background: linear-gradient(135deg, #0d4f2e 0%, #1a7a47 55%, #c9a84c 100%);
+      color: #fff; border-radius: 1rem;
+      padding: 2.5rem 2rem; margin-bottom: 2rem;
+      position: relative; overflow: hidden;
+    }
     .hero::before {
       content: '';
       position: absolute; inset: 0;
-      background: url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1200&q=60') center/cover no-repeat;
-      opacity: 0.10;
+      background: url('https://images.unsplash.com/photo-1586724237569-f3d0c1dee8c6?w=1200&q=60') center/cover no-repeat;
+      opacity: 0.13;
     }
     .hero > * { position: relative; }
     .section-badge {
@@ -191,20 +220,20 @@
     }
     .sticky-progress {
       position: sticky; top: 0; z-index: 50;
-      background: rgba(240,243,250,0.95);
+      background: rgba(245,247,245,0.95);
       backdrop-filter: blur(6px);
       padding: 0.6rem 0; margin-bottom: 1.5rem;
     }
     .counter-badge {
       display: inline-flex; align-items: center; gap: 0.4rem;
-      background: linear-gradient(135deg, #0a1f5c, #1a3a8f);
+      background: linear-gradient(135deg, #0d4f2e, #1a7a47);
       color: #fff; border-radius: 2rem;
       padding: 0.6rem 1.2rem;
       font-size: 1rem; font-weight: 700;
-      box-shadow: 0 2px 10px rgba(10,31,92,0.2);
+      box-shadow: 0 2px 10px rgba(13,79,46,0.2);
     }
     .resp-table { width: 100%; border-collapse: collapse; font-size: 0.78rem; }
-    .resp-table th { background: #0a1f5c; color: #fff; padding: 0.4rem 0.6rem; text-align: left; }
+    .resp-table th { background: #0d4f2e; color: #fff; padding: 0.4rem 0.6rem; text-align: left; }
     .resp-table td { padding: 0.35rem 0.6rem; border-bottom: 1px solid #e5e7eb; }
     .resp-table tr:nth-child(even) td { background: #f9fafb; }
     .screening-stop {
@@ -213,6 +242,15 @@
       border-radius: 0.75rem; padding: 1rem 1.25rem;
       color: #b91c1c; font-weight: 600; font-size: 0.9rem;
       margin-top: 0.5rem;
+    }
+    .db-loading {
+      text-align: center; padding: 1.5rem;
+      color: var(--muted); font-size: 0.9rem;
+    }
+    .db-error {
+      background: #fef2f2; border: 1px solid #fca5a5;
+      border-radius: 0.5rem; padding: 0.75rem 1rem;
+      color: #b91c1c; font-size: 0.82rem; margin-top: 0.5rem;
     }
     .max-w-3xl { max-width: 48rem; }
     .mx-auto { margin-left: auto; margin-right: auto; }
@@ -227,8 +265,11 @@
     .mb-6 { margin-bottom: 1.5rem; }
     .mb-10 { margin-bottom: 2.5rem; }
     .mt-3 { margin-top: 0.75rem; }
+    .mt-4 { margin-top: 1rem; }
+    .mt-6 { margin-top: 1.5rem; }
     .text-xs { font-size: 0.75rem; line-height: 1rem; }
     .text-sm { font-size: 0.875rem; line-height: 1.25rem; }
+    .text-base { font-size: 1rem; line-height: 1.5rem; }
     .text-lg { font-size: 1.125rem; line-height: 1.75rem; }
     .text-xl { font-size: 1.25rem; line-height: 1.75rem; }
     .text-2xl { font-size: 1.5rem; line-height: 2rem; }
@@ -240,6 +281,7 @@
     .flex-col { flex-direction: column; }
     .flex-wrap { flex-wrap: wrap; }
     .items-center { align-items: center; }
+    .justify-center { justify-content: center; }
     .justify-between { justify-content: space-between; }
     .gap-3 { gap: 0.75rem; }
     .grid { display: grid; }
@@ -258,12 +300,20 @@
     .text-6xl { font-size: 3.75rem; line-height: 1; }
     .block { display: block; }
     p { margin: 0; }
-    h1, h2, h3 { margin: 0; }
+    h1, h2 { margin: 0; }
   </style>
 </head>
 <body>
 
-    <div id="pw-modal">
+  <button id="lang-toggle" onclick="toggleLang()">عربي 🌐</button>
+
+  <button id="admin-toggle" onclick="checkAdminPassword()">
+    📊 <span id="admin-btn-label">Responses</span>
+    <span id="response-count-badge" style="background:#fff;color:#a16207;border-radius:9999px;padding:0.125rem 0.5rem;font-size:0.75rem;font-weight:700;margin-left:0.25rem;">…</span>
+  </button>
+
+  <!-- ── PASSWORD MODAL ──────────────────────────────── -->
+  <div id="pw-modal">
     <div id="pw-panel">
       <h3>🔐 Admin Access</h3>
       <p>Enter your admin password to view the dashboard</p>
@@ -296,12 +346,6 @@
       <div id="recent-responses"></div>
     </div>
   </div>
-
-  <div class="max-w-3xl mx-auto px-4 py-8">
-
-    <div style="text-align:center;margin-bottom:2rem;">
-      <img src="KSU.png" alt="KSU Logo" style="max-width:300px;height:auto;opacity:0.9;">
-    </div>
 
   <div class="max-w-3xl mx-auto px-4 py-8">
 
@@ -490,9 +534,9 @@
 //  ⚙️  SUPABASE CONFIG
 //  Get from: https://supabase.com → Project Settings → API
 // ══════════════════════════════════════════════════════════════
-const SUPABASE_URL      = 'https://drbqcaffhbmuvafssnwe.supabase.co';
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRyYnFjYWZmaGJtdXZhZnNzbndlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY5NTI1ODUsImV4cCI6MjA5MjUyODU4NX0.QIljzweCCnghDst1hCASPYCqV5EOtzOfPyeFuCGWpCg';
-const TABLE_NAME        = 'sports_tourism_responses';
+const SUPABASE_URL      = 'https://ssigzgrpdnlqhkwzkesl.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNzaWd6Z3JwZG5scWhrd3prZXNsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY5NTAyNDYsImV4cCI6MjA5MjUyNjI0Nn0.za7i0DhkN5gh5WcAjkelWCSOHn026m-L_YCwzMO8rCk';
+const TABLE_NAME        = 'riyadh_season_responses';
 
 // ══════════════════════════════════════════════════════════════
 //  🔐  ADMIN PASSWORD  — change this to your own password
@@ -898,5 +942,6 @@ async function clearResponses() {
 // ─── INIT ─────────────────────────────────────────────────────
 buildAll();
 updateCounterBadge();
+</script>
 </body>
 </html>
